@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59801F762C10019E005E314D /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59801F752C10019E005E314D /* MenuScene.swift */; };
+		59801FB72C100E9F005E314D /* MenuScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59801FB62C100E9F005E314D /* MenuScene.sks */; };
+		599B1B442C48BFB400051B8A /* BonusScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599B1B432C48BFB400051B8A /* BonusScene.swift */; };
+		599B1B482C48C15B00051B8A /* BonusScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 599B1B472C48C15B00051B8A /* BonusScene.sks */; };
+		59B01D222BD36D7B006779DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D212BD36D7B006779DC /* AppDelegate.swift */; };
+		59B01D242BD36D7B006779DC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D232BD36D7B006779DC /* GameScene.sks */; };
+		59B01D262BD36D7B006779DC /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D252BD36D7B006779DC /* Actions.sks */; };
+		59B01D282BD36D7B006779DC /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D272BD36D7B006779DC /* GameScene.swift */; };
+		59B01D2A2BD36D7B006779DC /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D292BD36D7B006779DC /* GameViewController.swift */; };
+		59B01D2D2BD36D7B006779DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D2B2BD36D7B006779DC /* Main.storyboard */; };
+		59B01D2F2BD36D7F006779DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D2E2BD36D7F006779DC /* Assets.xcassets */; };
+		59B01D322BD36D7F006779DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D302BD36D7F006779DC /* LaunchScreen.storyboard */; };
+		59B01D3C2BD36D80006779DC /* WordGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D3B2BD36D80006779DC /* WordGameTests.swift */; };
+		59B01D462BD36D80006779DC /* WordGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D452BD36D80006779DC /* WordGameUITests.swift */; };
+		59B01D482BD36D80006779DC /* WordGameUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D472BD36D80006779DC /* WordGameUITestsLaunchTests.swift */; };
+		59B01D572BD3A262006779DC /* letterA.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D562BD3A262006779DC /* letterA.png */; };
+		59B01D592BDFBE16006779DC /* A.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D582BDFBE16006779DC /* A.png */; };
+		59B01D5B2BDFC72F006779DC /* B.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D5A2BDFC72E006779DC /* B.png */; };
+		59B01D5D2BDFC76F006779DC /* C.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D5C2BDFC76E006779DC /* C.png */; };
+		59B01D5F2BDFC781006779DC /* D.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D5E2BDFC781006779DC /* D.png */; };
+		59B01D612BDFC787006779DC /* E.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D602BDFC787006779DC /* E.png */; };
+		59B01D632BDFC791006779DC /* F.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D622BDFC791006779DC /* F.png */; };
+		59B01D652BDFC798006779DC /* G.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D642BDFC798006779DC /* G.png */; };
+		59B01D672BDFC7A2006779DC /* H.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D662BDFC7A1006779DC /* H.png */; };
+		59B01D692BDFC7A8006779DC /* I.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D682BDFC7A7006779DC /* I.png */; };
+		59B01D6B2BDFC7AF006779DC /* J.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D6A2BDFC7AE006779DC /* J.png */; };
+		59B01D6D2BDFC7B6006779DC /* K.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D6C2BDFC7B6006779DC /* K.png */; };
+		59B01D6F2BDFC7BD006779DC /* L.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D6E2BDFC7BD006779DC /* L.png */; };
+		59B01D712BDFC7C4006779DC /* M.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D702BDFC7C4006779DC /* M.png */; };
+		59B01D732BDFC7CC006779DC /* N.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D722BDFC7CC006779DC /* N.png */; };
+		59B01D752BDFC7D4006779DC /* O.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D742BDFC7D3006779DC /* O.png */; };
+		59B01D772BDFC7E2006779DC /* P.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D762BDFC7E2006779DC /* P.png */; };
+		59B01D792BDFC7E9006779DC /* Q.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D782BDFC7E9006779DC /* Q.png */; };
+		59B01D7B2BDFC7EE006779DC /* R.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D7A2BDFC7EE006779DC /* R.png */; };
+		59B01D7D2BDFC7F5006779DC /* S.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D7C2BDFC7F5006779DC /* S.png */; };
+		59B01D7F2BDFC7FC006779DC /* T.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D7E2BDFC7FC006779DC /* T.png */; };
+		59B01D812BDFC804006779DC /* U.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D802BDFC804006779DC /* U.png */; };
+		59B01D832BDFC814006779DC /* V.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D822BDFC814006779DC /* V.png */; };
+		59B01D852BDFC81B006779DC /* W.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D842BDFC81B006779DC /* W.png */; };
+		59B01D872BDFC822006779DC /* X.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D862BDFC822006779DC /* X.png */; };
+		59B01D892BDFC82F006779DC /* Y.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D882BDFC82F006779DC /* Y.png */; };
+		59B01D8B2BDFC835006779DC /* Z.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D8A2BDFC835006779DC /* Z.png */; };
+		59D053D82C250DAA00623D7A /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D053D72C250DAA00623D7A /* ScoreScene.swift */; };
+		59D053DC2C25150C00623D7A /* ScoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59D053DB2C25150C00623D7A /* ScoreScene.sks */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59B01D382BD36D80006779DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59B01D162BD36D7B006779DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59B01D1D2BD36D7B006779DC;
+			remoteInfo = WordGame;
+		};
+		59B01D422BD36D80006779DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59B01D162BD36D7B006779DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59B01D1D2BD36D7B006779DC;
+			remoteInfo = WordGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		59801F752C10019E005E314D /* MenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		59801FB62C100E9F005E314D /* MenuScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MenuScene.sks; sourceTree = "<group>"; };
+		599B1B432C48BFB400051B8A /* BonusScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusScene.swift; sourceTree = "<group>"; };
+		599B1B472C48C15B00051B8A /* BonusScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BonusScene.sks; sourceTree = "<group>"; };
+		59B01D1E2BD36D7B006779DC /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59B01D212BD36D7B006779DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		59B01D232BD36D7B006779DC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		59B01D252BD36D7B006779DC /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		59B01D272BD36D7B006779DC /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		59B01D292BD36D7B006779DC /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		59B01D2C2BD36D7B006779DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		59B01D2E2BD36D7F006779DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59B01D312BD36D7F006779DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		59B01D372BD36D80006779DC /* WordGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59B01D3B2BD36D80006779DC /* WordGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGameTests.swift; sourceTree = "<group>"; };
+		59B01D412BD36D80006779DC /* WordGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59B01D452BD36D80006779DC /* WordGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGameUITests.swift; sourceTree = "<group>"; };
+		59B01D472BD36D80006779DC /* WordGameUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGameUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59B01D562BD3A262006779DC /* letterA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = letterA.png; path = letters/letterA.png; sourceTree = SOURCE_ROOT; };
+		59B01D582BDFBE16006779DC /* A.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = A.png; path = letters/A.png; sourceTree = SOURCE_ROOT; };
+		59B01D5A2BDFC72E006779DC /* B.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = B.png; path = letters/B.png; sourceTree = SOURCE_ROOT; };
+		59B01D5C2BDFC76E006779DC /* C.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = C.png; path = letters/C.png; sourceTree = SOURCE_ROOT; };
+		59B01D5E2BDFC781006779DC /* D.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = D.png; path = letters/D.png; sourceTree = SOURCE_ROOT; };
+		59B01D602BDFC787006779DC /* E.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = E.png; path = letters/E.png; sourceTree = SOURCE_ROOT; };
+		59B01D622BDFC791006779DC /* F.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = F.png; path = letters/F.png; sourceTree = SOURCE_ROOT; };
+		59B01D642BDFC798006779DC /* G.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = G.png; path = letters/G.png; sourceTree = SOURCE_ROOT; };
+		59B01D662BDFC7A1006779DC /* H.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = H.png; path = letters/H.png; sourceTree = SOURCE_ROOT; };
+		59B01D682BDFC7A7006779DC /* I.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = I.png; path = letters/I.png; sourceTree = SOURCE_ROOT; };
+		59B01D6A2BDFC7AE006779DC /* J.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = J.png; path = letters/J.png; sourceTree = SOURCE_ROOT; };
+		59B01D6C2BDFC7B6006779DC /* K.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = K.png; path = letters/K.png; sourceTree = SOURCE_ROOT; };
+		59B01D6E2BDFC7BD006779DC /* L.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = L.png; path = letters/L.png; sourceTree = SOURCE_ROOT; };
+		59B01D702BDFC7C4006779DC /* M.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = M.png; path = letters/M.png; sourceTree = SOURCE_ROOT; };
+		59B01D722BDFC7CC006779DC /* N.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = N.png; path = letters/N.png; sourceTree = SOURCE_ROOT; };
+		59B01D742BDFC7D3006779DC /* O.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = O.png; path = letters/O.png; sourceTree = SOURCE_ROOT; };
+		59B01D762BDFC7E2006779DC /* P.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = P.png; path = letters/P.png; sourceTree = SOURCE_ROOT; };
+		59B01D782BDFC7E9006779DC /* Q.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Q.png; path = letters/Q.png; sourceTree = SOURCE_ROOT; };
+		59B01D7A2BDFC7EE006779DC /* R.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = R.png; path = letters/R.png; sourceTree = SOURCE_ROOT; };
+		59B01D7C2BDFC7F5006779DC /* S.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = S.png; path = letters/S.png; sourceTree = SOURCE_ROOT; };
+		59B01D7E2BDFC7FC006779DC /* T.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = T.png; path = letters/T.png; sourceTree = SOURCE_ROOT; };
+		59B01D802BDFC804006779DC /* U.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = U.png; path = letters/U.png; sourceTree = SOURCE_ROOT; };
+		59B01D822BDFC814006779DC /* V.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = V.png; path = letters/V.png; sourceTree = SOURCE_ROOT; };
+		59B01D842BDFC81B006779DC /* W.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = W.png; path = letters/W.png; sourceTree = SOURCE_ROOT; };
+		59B01D862BDFC822006779DC /* X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = X.png; path = letters/X.png; sourceTree = SOURCE_ROOT; };
+		59B01D882BDFC82F006779DC /* Y.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Y.png; path = letters/Y.png; sourceTree = SOURCE_ROOT; };
+		59B01D8A2BDFC835006779DC /* Z.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Z.png; path = letters/Z.png; sourceTree = SOURCE_ROOT; };
+		59D053D72C250DAA00623D7A /* ScoreScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
+		59D053DB2C25150C00623D7A /* ScoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene.sks; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59B01D1B2BD36D7B006779DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59B01D342BD36D80006779DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59B01D3E2BD36D80006779DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59B01D152BD36D7A006779DC = {
+			isa = PBXGroup;
+			children = (
+				59B01D202BD36D7B006779DC /* WordGame */,
+				59B01D3A2BD36D80006779DC /* WordGameTests */,
+				59B01D442BD36D80006779DC /* WordGameUITests */,
+				59B01D1F2BD36D7B006779DC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59B01D1F2BD36D7B006779DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59B01D1E2BD36D7B006779DC /* WordGame.app */,
+				59B01D372BD36D80006779DC /* WordGameTests.xctest */,
+				59B01D412BD36D80006779DC /* WordGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59B01D202BD36D7B006779DC /* WordGame */ = {
+			isa = PBXGroup;
+			children = (
+				59B01D212BD36D7B006779DC /* AppDelegate.swift */,
+				59B01D232BD36D7B006779DC /* GameScene.sks */,
+				59B01D252BD36D7B006779DC /* Actions.sks */,
+				59B01D272BD36D7B006779DC /* GameScene.swift */,
+				59B01D292BD36D7B006779DC /* GameViewController.swift */,
+				59B01D2B2BD36D7B006779DC /* Main.storyboard */,
+				59B01D2E2BD36D7F006779DC /* Assets.xcassets */,
+				59B01D302BD36D7F006779DC /* LaunchScreen.storyboard */,
+				59B01D562BD3A262006779DC /* letterA.png */,
+				59B01D582BDFBE16006779DC /* A.png */,
+				59B01D5A2BDFC72E006779DC /* B.png */,
+				59B01D5C2BDFC76E006779DC /* C.png */,
+				59B01D5E2BDFC781006779DC /* D.png */,
+				59B01D602BDFC787006779DC /* E.png */,
+				59B01D622BDFC791006779DC /* F.png */,
+				59B01D642BDFC798006779DC /* G.png */,
+				59B01D662BDFC7A1006779DC /* H.png */,
+				59B01D682BDFC7A7006779DC /* I.png */,
+				59B01D6A2BDFC7AE006779DC /* J.png */,
+				59B01D6C2BDFC7B6006779DC /* K.png */,
+				59B01D6E2BDFC7BD006779DC /* L.png */,
+				59B01D702BDFC7C4006779DC /* M.png */,
+				59B01D722BDFC7CC006779DC /* N.png */,
+				59B01D742BDFC7D3006779DC /* O.png */,
+				59B01D762BDFC7E2006779DC /* P.png */,
+				59B01D782BDFC7E9006779DC /* Q.png */,
+				59B01D7A2BDFC7EE006779DC /* R.png */,
+				59B01D7C2BDFC7F5006779DC /* S.png */,
+				59B01D7E2BDFC7FC006779DC /* T.png */,
+				59B01D802BDFC804006779DC /* U.png */,
+				59B01D822BDFC814006779DC /* V.png */,
+				59B01D842BDFC81B006779DC /* W.png */,
+				59B01D862BDFC822006779DC /* X.png */,
+				59B01D882BDFC82F006779DC /* Y.png */,
+				59B01D8A2BDFC835006779DC /* Z.png */,
+				599B1B432C48BFB400051B8A /* BonusScene.swift */,
+				599B1B472C48C15B00051B8A /* BonusScene.sks */,
+				59801F752C10019E005E314D /* MenuScene.swift */,
+				59801FB62C100E9F005E314D /* MenuScene.sks */,
+				59D053DB2C25150C00623D7A /* ScoreScene.sks */,
+				59D053D72C250DAA00623D7A /* ScoreScene.swift */,
+			);
+			path = WordGame;
+			sourceTree = "<group>";
+		};
+		59B01D3A2BD36D80006779DC /* WordGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				59B01D3B2BD36D80006779DC /* WordGameTests.swift */,
+			);
+			path = WordGameTests;
+			sourceTree = "<group>";
+		};
+		59B01D442BD36D80006779DC /* WordGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				59B01D452BD36D80006779DC /* WordGameUITests.swift */,
+				59B01D472BD36D80006779DC /* WordGameUITestsLaunchTests.swift */,
+			);
+			path = WordGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59B01D1D2BD36D7B006779DC /* WordGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59B01D4B2BD36D80006779DC /* Build configuration list for PBXNativeTarget "WordGame" */;
+			buildPhases = (
+				59B01D1A2BD36D7B006779DC /* Sources */,
+				59B01D1B2BD36D7B006779DC /* Frameworks */,
+				59B01D1C2BD36D7B006779DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WordGame;
+			productName = WordGame;
+			productReference = 59B01D1E2BD36D7B006779DC /* WordGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59B01D362BD36D80006779DC /* WordGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59B01D4E2BD36D80006779DC /* Build configuration list for PBXNativeTarget "WordGameTests" */;
+			buildPhases = (
+				59B01D332BD36D80006779DC /* Sources */,
+				59B01D342BD36D80006779DC /* Frameworks */,
+				59B01D352BD36D80006779DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59B01D392BD36D80006779DC /* PBXTargetDependency */,
+			);
+			name = WordGameTests;
+			productName = WordGameTests;
+			productReference = 59B01D372BD36D80006779DC /* WordGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59B01D402BD36D80006779DC /* WordGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59B01D512BD36D80006779DC /* Build configuration list for PBXNativeTarget "WordGameUITests" */;
+			buildPhases = (
+				59B01D3D2BD36D80006779DC /* Sources */,
+				59B01D3E2BD36D80006779DC /* Frameworks */,
+				59B01D3F2BD36D80006779DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59B01D432BD36D80006779DC /* PBXTargetDependency */,
+			);
+			name = WordGameUITests;
+			productName = WordGameUITests;
+			productReference = 59B01D412BD36D80006779DC /* WordGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59B01D162BD36D7B006779DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					59B01D1D2BD36D7B006779DC = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					59B01D362BD36D80006779DC = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 59B01D1D2BD36D7B006779DC;
+					};
+					59B01D402BD36D80006779DC = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 59B01D1D2BD36D7B006779DC;
+					};
+				};
+			};
+			buildConfigurationList = 59B01D192BD36D7B006779DC /* Build configuration list for PBXProject "WordGame" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59B01D152BD36D7A006779DC;
+			productRefGroup = 59B01D1F2BD36D7B006779DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59B01D1D2BD36D7B006779DC /* WordGame */,
+				59B01D362BD36D80006779DC /* WordGameTests */,
+				59B01D402BD36D80006779DC /* WordGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59B01D1C2BD36D7B006779DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59B01D772BDFC7E2006779DC /* P.png in Resources */,
+				59B01D7D2BDFC7F5006779DC /* S.png in Resources */,
+				59B01D6F2BDFC7BD006779DC /* L.png in Resources */,
+				59B01D612BDFC787006779DC /* E.png in Resources */,
+				59B01D5D2BDFC76F006779DC /* C.png in Resources */,
+				59B01D6B2BDFC7AF006779DC /* J.png in Resources */,
+				59B01D872BDFC822006779DC /* X.png in Resources */,
+				59B01D712BDFC7C4006779DC /* M.png in Resources */,
+				59B01D2D2BD36D7B006779DC /* Main.storyboard in Resources */,
+				59B01D732BDFC7CC006779DC /* N.png in Resources */,
+				59B01D242BD36D7B006779DC /* GameScene.sks in Resources */,
+				59B01D5B2BDFC72F006779DC /* B.png in Resources */,
+				599B1B482C48C15B00051B8A /* BonusScene.sks in Resources */,
+				59B01D2F2BD36D7F006779DC /* Assets.xcassets in Resources */,
+				59B01D7F2BDFC7FC006779DC /* T.png in Resources */,
+				59B01D692BDFC7A8006779DC /* I.png in Resources */,
+				59B01D632BDFC791006779DC /* F.png in Resources */,
+				59B01D752BDFC7D4006779DC /* O.png in Resources */,
+				59D053DC2C25150C00623D7A /* ScoreScene.sks in Resources */,
+				59B01D852BDFC81B006779DC /* W.png in Resources */,
+				59B01D8B2BDFC835006779DC /* Z.png in Resources */,
+				59801FB72C100E9F005E314D /* MenuScene.sks in Resources */,
+				59B01D892BDFC82F006779DC /* Y.png in Resources */,
+				59B01D792BDFC7E9006779DC /* Q.png in Resources */,
+				59B01D322BD36D7F006779DC /* LaunchScreen.storyboard in Resources */,
+				59B01D812BDFC804006779DC /* U.png in Resources */,
+				59B01D6D2BDFC7B6006779DC /* K.png in Resources */,
+				59B01D5F2BDFC781006779DC /* D.png in Resources */,
+				59B01D7B2BDFC7EE006779DC /* R.png in Resources */,
+				59B01D262BD36D7B006779DC /* Actions.sks in Resources */,
+				59B01D592BDFBE16006779DC /* A.png in Resources */,
+				59B01D572BD3A262006779DC /* letterA.png in Resources */,
+				59B01D672BDFC7A2006779DC /* H.png in Resources */,
+				59B01D832BDFC814006779DC /* V.png in Resources */,
+				59B01D652BDFC798006779DC /* G.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59B01D352BD36D80006779DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59B01D3F2BD36D80006779DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59B01D1A2BD36D7B006779DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				599B1B442C48BFB400051B8A /* BonusScene.swift in Sources */,
+				59B01D282BD36D7B006779DC /* GameScene.swift in Sources */,
+				59801F762C10019E005E314D /* MenuScene.swift in Sources */,
+				59B01D2A2BD36D7B006779DC /* GameViewController.swift in Sources */,
+				59B01D222BD36D7B006779DC /* AppDelegate.swift in Sources */,
+				59D053D82C250DAA00623D7A /* ScoreScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59B01D332BD36D80006779DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59B01D3C2BD36D80006779DC /* WordGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59B01D3D2BD36D80006779DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59B01D482BD36D80006779DC /* WordGameUITestsLaunchTests.swift in Sources */,
+				59B01D462BD36D80006779DC /* WordGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59B01D392BD36D80006779DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59B01D1D2BD36D7B006779DC /* WordGame */;
+			targetProxy = 59B01D382BD36D80006779DC /* PBXContainerItemProxy */;
+		};
+		59B01D432BD36D80006779DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59B01D1D2BD36D7B006779DC /* WordGame */;
+			targetProxy = 59B01D422BD36D80006779DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		59B01D2B2BD36D7B006779DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59B01D2C2BD36D7B006779DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		59B01D302BD36D7F006779DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59B01D312BD36D7F006779DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59B01D492BD36D80006779DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		59B01D4A2BD36D80006779DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59B01D4C2BD36D80006779DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = phil.WordGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		59B01D4D2BD36D80006779DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = phil.WordGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		59B01D4F2BD36D80006779DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = phil.WordGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WordGame";
+			};
+			name = Debug;
+		};
+		59B01D502BD36D80006779DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = phil.WordGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WordGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WordGame";
+			};
+			name = Release;
+		};
+		59B01D522BD36D80006779DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = phil.WordGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WordGame;
+			};
+			name = Debug;
+		};
+		59B01D532BD36D80006779DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = phil.WordGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WordGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59B01D192BD36D7B006779DC /* Build configuration list for PBXProject "WordGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B01D492BD36D80006779DC /* Debug */,
+				59B01D4A2BD36D80006779DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59B01D4B2BD36D80006779DC /* Build configuration list for PBXNativeTarget "WordGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B01D4C2BD36D80006779DC /* Debug */,
+				59B01D4D2BD36D80006779DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59B01D4E2BD36D80006779DC /* Build configuration list for PBXNativeTarget "WordGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B01D4F2BD36D80006779DC /* Debug */,
+				59B01D502BD36D80006779DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59B01D512BD36D80006779DC /* Build configuration list for PBXNativeTarget "WordGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59B01D522BD36D80006779DC /* Debug */,
+				59B01D532BD36D80006779DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59B01D162BD36D7B006779DC /* Project object */;
+}
