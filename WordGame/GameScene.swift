@@ -168,9 +168,9 @@ class GameScene: SKScene {
             }
         }
 //
-//        arrayOfLetters[0][0] = pickLetter()
-//        arrayOfLetters[0][1] = pickLetter()
-//        arrayOfLetters[0][2] = pickLetter()
+        arrayOfLetters[0][0] = "I"
+        arrayOfLetters[0][1] = "N"
+        arrayOfLetters[0][2] = "N"
 //        arrayOfLetters[0][3] = pickLetter()
 //        arrayOfLetters[0][4] = pickLetter()
 //        arrayOfLetters[1][0] = pickLetter()
@@ -1620,6 +1620,8 @@ class GameScene: SKScene {
         }
         
         if (secondBonusAsInt == 0) {
+            
+            //3 or more vowels
          
             var numbOfVowels = 0
 
@@ -1640,8 +1642,107 @@ class GameScene: SKScene {
             else {
                 print("number of vowels is not 3")
             }
+        }
+        
+        if (secondBonusAsInt == 1) {
+            //double consanant
+            
+            print ("second bonus starting letter: ", word[word.startIndex])
+            
+           // if ["a","e", "i", "o", "u"].contains(word[word.startIndex]) {
+                
+           // }
+            
+          //  else {
+                
+           //     print ("The first letter is a consonant")
+                
+                //    if [word[word.startIndex]].contains(word[word.startIndex, offsetBy: 1]) {
+                
+                //     print ("xxxx ", word[word.startIndex, offsetBy: 1])
+                
+                let amnt = 0...word.count-1
+                
+                for num in amnt {
+                    
+               //     let newindex = word.index(word.startIndex, offsetBy: 1)
+                //    print("DDDDDDDD ", word[newindex])
+                    
+                    print("word index = ", word.index(word.startIndex, offsetBy: 1))
+                 
+                    let index = word.index(word.startIndex, offsetBy: num)
+                    print( word[index])
+                    
+                    let newIndex1 = word.index(word.startIndex, offsetBy: num)
+                    let firstChar = word[newIndex1]
+                    
+                    if (num+1 < word.count) {
+                        
+                        let newIndex2 = word.index(word.startIndex, offsetBy: num+1)
+                        let secondChar = word[newIndex2]
+                        
+                        print("num = ", num)
+                        print("word.count = ", word.count)
+                        print("firstChar = ", firstChar)
+                        print("secondChar = ", secondChar)
+                        
+                        if (firstChar == secondChar) {
+                            
+                            print("Made it here XXX")
+                            
+                            if (!["a","e", "i", "o", "u"].contains(firstChar)) {
+                                
+                                print("Word contains a double consonant")
+                                numStarsCollected += 1
+                                
+                            }
+                        }
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+              //  }
+                
+                
+                
+             /*   let char1 = word[word.startIndex]
+                let char2 = word[index]
+                
+                print ("char1 = ", char1)
+                print ("char2 = ", char2)
+                
+                if ( char1 == char2) {
+                    
+                    print ("the first two letter are the same")
+                    
+                }
+                
+                else {
+                    
+                    print ("the first two letters are not the same")
+                }
+              
+              */
+            }
             
         }
+        
+        if (secondBonusAsInt == 2) {
+            //first and last letter the same
+            
+            let firstChar = word[word.startIndex]
+            let numLetters = word.count - 1
+            let secondIndex = word.index(word.startIndex, offsetBy: numLetters)
+            let secondChar = word[secondIndex]
+            
+            print("firstChar = ", firstChar)
+            print("secondChar = ", secondChar)
+        }
+        
+        
         
         
     }
