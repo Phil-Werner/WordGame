@@ -69,7 +69,7 @@ class BonusScene: SKScene {
                     self.run(wait2, completion: {
                         
                        // secondBonusAsInt = self.selectSecondBonus()
-                        secondBonusAsInt = 2
+                        secondBonusAsInt = 4
                         
                         print("second bonus as int = ", secondBonusAsInt)
                         

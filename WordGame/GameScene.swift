@@ -29,6 +29,9 @@ var bonusLetter = "A"
 class GameScene: SKScene {
     
     
+    private var star = SKSpriteNode()
+    private var starRunningFrames: [SKTexture] = []
+    
     func clearOldSelectedLetters() {
         arrayOfSelectedLetters = Array(repeating: Array(repeating: false, count: 5), count: 5)
     }
@@ -132,6 +135,46 @@ class GameScene: SKScene {
         print("😆 1")
         backgroundColor = .red
         
+        buildStar()
+        animateStar()
+        
+      //  physicsWorld.gravity = CGVector(dx: 0, dy: -1.62)
+        
+    
+      func buildStar() {
+          let starAnimatedAtlas = SKTextureAtlas(named: "star")
+          var starFrames: [SKTexture] = []
+          
+          let numImages = starAnimatedAtlas.textureNames.count
+          for i in 1..<numImages {
+              let starTextureName = "star\(i)"
+             // print("starTextureName = ", starTextureName)
+              starFrames.append(starAnimatedAtlas.textureNamed(starTextureName))
+          }
+          starRunningFrames = starFrames
+          
+          
+          let firstFrameTexture = starRunningFrames[0]
+          star = SKSpriteNode(texture: firstFrameTexture)
+          star.setScale(0.4)
+          star.position = CGPoint(x: -225, y: 550)
+          addChild(star)
+          
+     //     star.physicsBody = SKPhysicsBody(rectangleOf: star.size)
+          
+      }
+      
+      func animateStar() {
+        star.run(SKAction.repeatForever(
+          SKAction.animate(with: starRunningFrames,
+                           timePerFrame: 0.1,
+                           resize: false,
+                           restore: true)),
+          withKey:"spinningStar")
+      }
+        
+        
+        
         timeLeft.text = "30"
         timeLeft.fontSize = 65
         timeLeft.fontColor = SKColor.black
@@ -168,11 +211,11 @@ class GameScene: SKScene {
             }
         }
 //
-        arrayOfLetters[0][0] = "I"
-        arrayOfLetters[0][1] = "N"
-        arrayOfLetters[0][2] = "N"
-//        arrayOfLetters[0][3] = pickLetter()
-//        arrayOfLetters[0][4] = pickLetter()
+//        arrayOfLetters[0][0] = "B"
+//        arrayOfLetters[0][1] = "L"
+//        arrayOfLetters[0][2] = "A"
+//        arrayOfLetters[0][3] = "C"
+//        arrayOfLetters[0][4] = "K"
 //        arrayOfLetters[1][0] = pickLetter()
 //        arrayOfLetters[1][1] = pickLetter()
 //        arrayOfLetters[1][2] = pickLetter()
@@ -1740,6 +1783,123 @@ class GameScene: SKScene {
             
             print("firstChar = ", firstChar)
             print("secondChar = ", secondChar)
+            
+            if (firstChar == secondChar) {
+                
+                print("This word starts and ends witht the same letter")
+                numStarsCollected += 1
+            }
+        }
+        
+        if (secondBonusAsInt == 3) {
+            //double vowel
+            
+            let amnt = 0...word.count-1
+            
+            for num in amnt {
+                
+                //     let newindex = word.index(word.startIndex, offsetBy: 1)
+                //    print("DDDDDDDD ", word[newindex])
+                
+                print("word index = ", word.index(word.startIndex, offsetBy: 1))
+                
+                let index = word.index(word.startIndex, offsetBy: num)
+                print( word[index])
+                
+                let newIndex1 = word.index(word.startIndex, offsetBy: num)
+                let firstChar = word[newIndex1]
+                
+                if (num+1 < word.count) {
+                    
+                    let newIndex2 = word.index(word.startIndex, offsetBy: num+1)
+                    let secondChar = word[newIndex2]
+                    
+                    print("num = ", num)
+                    print("word.count = ", word.count)
+                    print("firstChar = ", firstChar)
+                    print("secondChar = ", secondChar)
+                    
+                    if (firstChar == secondChar) {
+                        
+                        print("Made it here XXX")
+                        
+                        if (["a","e", "i", "o", "u"].contains(firstChar)) {
+                            
+                            print("Word contains a double vowel")
+                            numStarsCollected += 1
+                            
+                        }
+                    }
+                    
+                }
+                
+            }
+        }
+        
+        if (secondBonusAsInt == 4) {
+            
+            var numConsonants = 0
+            
+            print("SECONDBONUS IS NOw number 4, 4 consonants")
+            
+            let amnt = 0...word.count-1
+            
+            for num in amnt {
+                
+                let index = word.index(word.startIndex, offsetBy: num)
+                print( word[index])
+                let char = word[index]
+                
+                if (!["a","e", "i", "o", "u"].contains(char)) {
+                    
+                    print("This letter is a consonant")
+                    
+                    numConsonants += 1
+                }
+            }
+            
+            if (numConsonants == 4) {
+                
+                print ("This word contains four consonants")
+                numStarsCollected += 1
+                
+            }
+            
+            if (thirdBonusAsInt == 0) {
+                //bonus star for word 5 letters long
+                
+                if (word.count == 5) {
+                    print("this word is five letters and the bonus star word length is too")
+                    numStarsCollected += 1
+                    
+                }
+                
+            }
+            
+            if (thirdBonusAsInt == 1) {
+                //bonus star for word 6 letters long
+                
+                if (word.count == 6) {
+                    print("this word is six letters and the bonus star word length is too")
+                    numStarsCollected += 1
+                    
+                }
+                
+            }
+            
+            if (thirdBonusAsInt == 2) {
+                //bonus star for word 7 letters long
+                
+                if (word.count == 7) {
+                    print("this word is seven letters and the bonus star word length is too")
+                    numStarsCollected += 1
+                    
+                }
+                
+            }
+            
+            
+            
         }
         
         
