@@ -81,6 +81,7 @@ class GameScene: SKScene {
     let correctWordString = SKLabelNode(fontNamed: "Chalkduster")
     let currentScore = SKLabelNode(fontNamed: "Chalkduster")
     let timeLeft = SKLabelNode(fontNamed: "ArialMT")
+    let numBonusStarsLabel = SKLabelNode(fontNamed: "ArialMT")
     
     var arrayOfLetters = [["A", "B", "C", "D", "E"], ["F", "G", "H", "I", "J"], ["K", "L", "M", "N", "O"], ["P", "Q", "R", "S", "T"], ["U", "V", "W", "X", "Y"]]
     
@@ -194,12 +195,17 @@ class GameScene: SKScene {
         currentScore.fontSize = 65
         currentScore.fontColor = SKColor.black
         currentScore.position = CGPoint(x: 0, y: 400)
+        
+        numBonusStarsLabel.text = "2"
+        numBonusStarsLabel.fontSize = 65
+        numBonusStarsLabel.fontColor = SKColor.black
+        numBonusStarsLabel.position = CGPoint(x: -170, y: 518)
            
         addChild(displayedWord)
         addChild(correctWordString)
         addChild(currentScore)
         addChild(timeLeft)
-
+        addChild(numBonusStarsLabel)
         
         //arrayOfLetters[0][0] = "A"
         
