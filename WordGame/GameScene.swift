@@ -20,7 +20,7 @@ var numFiveLetterWords = 0
 var numSixLetterWords = 0
 var numSevenLetterWords = 0
 var numEightLetterWords = 0
-var numStarsCollected = 0
+var numStarsCollected = 2
 
 var secondBonusAsInt = 0
 var thirdBonusAsInt = 0
@@ -217,11 +217,11 @@ class GameScene: SKScene {
             }
         }
 //
-//        arrayOfLetters[0][0] = "B"
-//        arrayOfLetters[0][1] = "L"
-//        arrayOfLetters[0][2] = "A"
-//        arrayOfLetters[0][3] = "C"
-//        arrayOfLetters[0][4] = "K"
+        arrayOfLetters[0][0] = "Z"
+        arrayOfLetters[0][1] = "I"
+        arrayOfLetters[0][2] = "P"
+        arrayOfLetters[0][3] = "S"
+ //       arrayOfLetters[0][4] = "K"
 //        arrayOfLetters[1][0] = pickLetter()
 //        arrayOfLetters[1][1] = pickLetter()
 //        arrayOfLetters[1][2] = pickLetter()
@@ -1652,7 +1652,10 @@ class GameScene: SKScene {
         return 0
     }
     
-    func checkForBonusStars(word: String) {
+    func checkForBonusStars(word: String) -> Bool {
+        
+        
+        var output = false
         
         print ("Begun checking for bonus stars")
         print ("word for bonus stars is", word)
@@ -1662,6 +1665,8 @@ class GameScene: SKScene {
         if (word.contains(tmpLetter)) {
             print ("Word contains bonus letter")
             numStarsCollected += 1
+            numBonusStarsLabel.text = "\(numStarsCollected)"
+            output = true
         }
         
         else {
@@ -1685,6 +1690,8 @@ class GameScene: SKScene {
                 
                 print ("number of vowels is 3")
                 numStarsCollected += 1
+                numBonusStarsLabel.text = "\(numStarsCollected)"
+                output = true
                 
             }
             
@@ -1743,6 +1750,8 @@ class GameScene: SKScene {
                                 
                                 print("Word contains a double consonant")
                                 numStarsCollected += 1
+                                numBonusStarsLabel.text = "\(numStarsCollected)"
+                                output = true
                                 
                             }
                         }
@@ -1792,8 +1801,10 @@ class GameScene: SKScene {
             
             if (firstChar == secondChar) {
                 
-                print("This word starts and ends witht the same letter")
+                print("This word starts and ends with the same letter")
                 numStarsCollected += 1
+                numBonusStarsLabel.text = "\(numStarsCollected)"
+                output = true
             }
         }
         
@@ -1833,6 +1844,8 @@ class GameScene: SKScene {
                             
                             print("Word contains a double vowel")
                             numStarsCollected += 1
+                            numBonusStarsLabel.text = "\(numStarsCollected)"
+                            output = true
                             
                         }
                     }
@@ -1868,6 +1881,8 @@ class GameScene: SKScene {
                 
                 print ("This word contains four consonants")
                 numStarsCollected += 1
+                numBonusStarsLabel.text = "\(numStarsCollected)"
+                output = true
                 
             }
             
@@ -1877,6 +1892,8 @@ class GameScene: SKScene {
                 if (word.count == 5) {
                     print("this word is five letters and the bonus star word length is too")
                     numStarsCollected += 1
+                    numBonusStarsLabel.text = "\(numStarsCollected)"
+                    output = true
                     
                 }
                 
@@ -1888,6 +1905,8 @@ class GameScene: SKScene {
                 if (word.count == 6) {
                     print("this word is six letters and the bonus star word length is too")
                     numStarsCollected += 1
+                    numBonusStarsLabel.text = "\(numStarsCollected)"
+                    output = true
                     
                 }
                 
@@ -1899,6 +1918,8 @@ class GameScene: SKScene {
                 if (word.count == 7) {
                     print("this word is seven letters and the bonus star word length is too")
                     numStarsCollected += 1
+                    numBonusStarsLabel.text = "\(numStarsCollected)"
+                    output = true
                     
                 }
                 
@@ -1908,7 +1929,7 @@ class GameScene: SKScene {
             
         }
         
-        
+    return output
         
         
     }
@@ -2006,19 +2027,44 @@ class GameScene: SKScene {
                        // self.checkForBonusStars(word: "apple")
                        // self.checkForBonusStars(word: "looker")
                         
-                        self.checkForBonusStars(word: lowerCaseWord)
+                        if (self.checkForBonusStars(word: lowerCaseWord)) {
+                            
+                            print("Made it here, check for bonus stars is true")
+                            
+                            self.correctWordString.text = "You got a bonus Star!"
+                            self.correctWordString.fontSize = 30
+                            self.correctWordString.fontColor = SKColor.black
+                            self.correctWordString.position = CGPoint(x: 0, y: 200)
+                            
+                            self.correctWordString.run(actionSequence, completion: {
+                                self.correctWordString.text = ""
+                                self.currentScore.text = "\(self.scoreAsInt)"
+                                self.clearOldSelectedLetters()
+                                self.changeLettersToWhite()
+                                self.anyLetterSelected = false
+                                self.displayedWord.text = ""
+                                self.chosenWord = ""
+                                self.arrayOfUsedWords.append(lowerCaseWord)
+                                self.clearOldLettersInWord()
+                                
+                            })
+                        }
                         
-                        self.correctWordString.text = ""
-                        self.currentScore.text = "\(self.scoreAsInt)"
-                        self.clearOldSelectedLetters()
-                        self.changeLettersToWhite()
-                        self.anyLetterSelected = false
-                        self.displayedWord.text = ""
-                        self.chosenWord = ""
-                        self.arrayOfUsedWords.append(lowerCaseWord)
-                        self.clearOldLettersInWord()
-                        
-                        print("arrayofUsedWords = ", self.arrayOfUsedWords)
+                        else {
+                            
+                            self.correctWordString.text = ""
+                            self.currentScore.text = "\(self.scoreAsInt)"
+                            self.clearOldSelectedLetters()
+                            self.changeLettersToWhite()
+                            self.anyLetterSelected = false
+                            self.displayedWord.text = ""
+                            self.chosenWord = ""
+                            self.arrayOfUsedWords.append(lowerCaseWord)
+                            self.clearOldLettersInWord()
+                            
+                            print("arrayofUsedWords = ", self.arrayOfUsedWords)
+                            
+                        }
                     })
                 })
                 

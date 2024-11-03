@@ -44,8 +44,8 @@ class BonusScene: SKScene {
             intro3.position = CGPoint(x: -130, y: 300)
             self.addChild(intro3)
             
-            bonusLetter = self.selectBonusLetter()
-        //    bonusLetter = "A"
+        //    bonusLetter = self.selectBonusLetter()
+            bonusLetter = "Z"
             
             self.run(wait2, completion: {
                 
