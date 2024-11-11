@@ -2007,6 +2007,7 @@ class GameScene: SKScene {
                 let scaleUpAction = SKAction.scale(to: 1.5, duration: 0.3)
                 let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
                 let actionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction])
+               // let bonusActionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction, scaleDownAction])
             
                       
                 correctWordString.run(actionSequence, completion: {
