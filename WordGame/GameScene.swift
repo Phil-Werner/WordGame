@@ -26,8 +26,12 @@ var secondBonusAsInt = 0
 var thirdBonusAsInt = 0
 var bonusLetter = "A"
 
+var awaitingLetterReplacement = false
+
 class GameScene: SKScene {
     
+    
+    var buyVowelButton  = SKShapeNode(rectOf: CGSize(width: 200, height: 80))
     
     private var star = SKSpriteNode()
     private var starRunningFrames: [SKTexture] = []
@@ -51,6 +55,18 @@ class GameScene: SKScene {
         let pick = arc4random_uniform(numLettersInAlphabet)
         
         return alphabet[Int(pick)]
+    }
+    
+    func pickVowel() -> String {
+        
+        let vowels = ["A", "E", "I", "O", "U"]
+        
+        let tempNum = vowels.count - 1
+        let numLetters = UInt32(tempNum)
+        let pick = arc4random_uniform(numLetters)
+        
+        return vowels[Int(pick)]
+        
     }
     
     func changeLettersToWhite() {
@@ -181,11 +197,23 @@ class GameScene: SKScene {
       }
         
         
+        buyVowelButton.fillColor = .white
+        buyVowelButton.position = CGPoint(x: 135, y: 325)
+        buyVowelButton.strokeColor = .black
+        buyVowelButton.lineWidth = 3
+        addChild(buyVowelButton)
         
         timeLeft.text = "30"
         timeLeft.fontSize = 65
         timeLeft.fontColor = SKColor.black
         timeLeft.position = CGPoint(x: 240, y: 525)
+        
+        let buyVowelString = SKLabelNode(fontNamed: "Chalkduster")
+        buyVowelString.text = "Buy Vowel"
+        buyVowelString.fontSize = 30
+        buyVowelString.fontColor = SKColor.black
+        buyVowelString.position = CGPoint(x: 135, y: 322)
+        addChild(buyVowelString)
         
         displayedWord.text = ""
         displayedWord.fontSize = 65
@@ -2098,6 +2126,89 @@ class GameScene: SKScene {
                 
                 
             }
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("got over here")
+        
+        for touch: AnyObject in touches {
+            let location = touch.location(in: self)
+            
+            if buyVowelButton.contains(location) {
+                print("Buy vowel button was pressed")
+                buyVowelButton.fillColor = .blue
+                
+                awaitingLetterReplacement = true
+                
+                let wait = SKAction.wait(forDuration: 0.2)
+                
+                self.correctWordString.fontSize = 35
+                self.correctWordString.text = "Choose a letter!"
+                
+                
+                
+                run(wait, completion: {
+                    
+                    self.buyVowelButton.fillColor = .white
+                    
+                    
+                })
+                
+                
+                let scaleUpAction = SKAction.scale(to: 1.5, duration: 0.3)
+                let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
+                let actionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction])
+                
+                correctWordString.run(actionSequence, completion: {
+                    
+                    
+                    //self.correctWordString.fontSize = 20
+                    self.correctWordString.text = ""
+                })
+                
+              //  let scene = BonusScene(fileNamed: "BonusScene")!
+              //  scene.scaleMode = .aspectFill
+               // scene.size = (CGSize(width: 10, height: 50))
+              //  scene.scaleMode = SKSceneScaleMode.resizeFill
+             //   let transition = SKTransition.doorway(withDuration: 2)
+              //  self.view?.presentScene(scene, transition: transition)
+                
+            }
+            
+            if letter1.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 1 was pressed and should be replaced with a vowel")
+                    let removeLetter1 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter1.run(removeLetter1, completion: {
+                        
+                        let newLetter1 = self.pickVowel()
+                        self.arrayOfLetters[0][0] = newLetter1
+                        self.letter1.texture = SKTexture(imageNamed: self.arrayOfLetters[0][0])
+                        
+                        self.letter1.position = CGPoint(x: -190, y: 600)
+                        
+                        let addLetter1 = SKAction.move(to: CGPoint(x: -190, y: -500), duration: TimeInterval(0.25))
+                        
+                        self.letter1.run(addLetter1, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            
+                            
+                            
+                            //
+                        })
+                        
+                    })
+                    
+                }
+            }
+            
+            
         }
     }
     
