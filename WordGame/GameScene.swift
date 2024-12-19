@@ -2185,8 +2185,8 @@ class GameScene: SKScene {
                     
                     letter1.run(removeLetter1, completion: {
                         
-                        let newLetter1 = self.pickVowel()
-                        self.arrayOfLetters[0][0] = newLetter1
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[0][0] = newLetter
                         self.letter1.texture = SKTexture(imageNamed: self.arrayOfLetters[0][0])
                         
                         self.letter1.position = CGPoint(x: -190, y: 600)
@@ -2197,6 +2197,39 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            
+                            
+                            //
+                        })
+                        
+                    })
+                    
+                }
+            }
+            
+            if letter2.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 2 was pressed and should be replaced with a vowel")
+                    let removeLetter2 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter2.run(removeLetter2, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[0][1] = newLetter
+                        self.letter2.texture = SKTexture(imageNamed: self.arrayOfLetters[0][1])
+                        
+                        self.letter2.position = CGPoint(x: -90, y: 600)
+                        
+                        let addLetter2 = SKAction.move(to: CGPoint(x: -90, y: -500), duration: TimeInterval(0.25))
+                        
+                        self.letter2.run(addLetter2, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
                             
                             
                             
@@ -2207,6 +2240,703 @@ class GameScene: SKScene {
                     
                 }
             }
+            
+            if letter3.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 3 was pressed and should be replaced with a vowel")
+                    let removeLetter3 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter3.run(removeLetter3, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[0][2] = newLetter
+                        self.letter3.texture = SKTexture(imageNamed: self.arrayOfLetters[0][2])
+                        
+                        self.letter3.position = CGPoint(x: 10, y: 600)
+                        
+                        let addLetter3 = SKAction.move(to: CGPoint(x: 10, y: -500), duration: TimeInterval(0.25))
+                        
+                        self.letter3.run(addLetter3, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            
+                            
+                            
+                            //
+                        })
+                        
+                    })
+                    
+                }
+            }
+            
+            
+            
+            if letter4.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 4 was pressed and should be replaced with a vowel")
+                    let removeLetter4 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter4.run(removeLetter4, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[0][3] = newLetter
+                        self.letter4.texture = SKTexture(imageNamed: self.arrayOfLetters[0][3])
+                        
+                        self.letter4.position = CGPoint(x: 110, y: 600)
+                        
+                        let addLetter4 = SKAction.move(to: CGPoint(x: 110, y: -500), duration: TimeInterval(0.25))
+                        
+                        self.letter4.run(addLetter4, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            
+                            
+                            
+                            //
+                        })
+                        
+                    })
+                    
+                }
+            }
+            
+            
+            if letter5.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 5 was pressed and should be replaced with a vowel")
+                    let removeLetter5 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter5.run(removeLetter5, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[0][4] = newLetter
+                        self.letter5.texture = SKTexture(imageNamed: self.arrayOfLetters[0][4])
+                        
+                        self.letter5.position = CGPoint(x: 210, y: 600)
+                        
+                        let addLetter5 = SKAction.move(to: CGPoint(x: 210, y: -500), duration: TimeInterval(0.25))
+                        
+                        self.letter5.run(addLetter5, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            
+                            
+                            
+                            //
+                        })
+                        
+                    })
+                    
+                }
+            }
+            
+            if letter6.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 6 was pressed and should be replaced with a vowel")
+                    let removeLetter6 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter6.run(removeLetter6, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[1][0] = newLetter
+                        self.letter6.texture = SKTexture(imageNamed: self.arrayOfLetters[1][0])
+                        
+                        self.letter6.position = CGPoint(x: -190, y: 600)
+                        
+                        let addLetter6 = SKAction.move(to: CGPoint(x: -190, y: -400), duration: TimeInterval(0.25))
+                        
+                        self.letter6.run(addLetter6, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            
+                            
+                            
+                            //
+                        })
+                        
+                    })
+                    
+                }
+            }
+            
+            
+            
+            if letter7.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 7 was pressed and should be replaced with a vowel")
+                    let removeLetter7 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter7.run(removeLetter7, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[1][1] = newLetter
+                        self.letter7.texture = SKTexture(imageNamed: self.arrayOfLetters[1][1])
+                        
+                        self.letter7.position = CGPoint(x: -90, y: 600)
+                        
+                        let addLetter7 = SKAction.move(to: CGPoint(x: -90, y: -400), duration: TimeInterval(0.25))
+                        
+                        self.letter7.run(addLetter7, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            
+                            
+                            
+                            //
+                        })
+                        
+                    })
+                    
+                }
+            }
+            
+            
+            if letter8.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 8 was pressed and should be replaced with a vowel")
+                    let removeLetter8 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter8.run(removeLetter8, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[1][2] = newLetter
+                        self.letter8.texture = SKTexture(imageNamed: self.arrayOfLetters[1][2])
+                        
+                        self.letter8.position = CGPoint(x: 10, y: 600)
+                        
+                        let addLetter8 = SKAction.move(to: CGPoint(x: 10, y: -400), duration: TimeInterval(0.25))
+                        
+                        self.letter8.run(addLetter8, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            
+            if letter9.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 9 was pressed and should be replaced with a vowel")
+                    let removeLetter9 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter9.run(removeLetter9, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[1][3] = newLetter
+                        self.letter9.texture = SKTexture(imageNamed: self.arrayOfLetters[1][3])
+                        
+                        self.letter9.position = CGPoint(x: 110, y: 600)
+                        
+                        let addLetter9 = SKAction.move(to: CGPoint(x: 110, y: -400), duration: TimeInterval(0.25))
+                        
+                        self.letter9.run(addLetter9, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            
+            
+            if letter10.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 10 was pressed and should be replaced with a vowel")
+                    let removeLetter10 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter10.run(removeLetter10, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[1][4] = newLetter
+                        self.letter10.texture = SKTexture(imageNamed: self.arrayOfLetters[1][4])
+                        
+                        self.letter10.position = CGPoint(x: 210, y: 600)
+                        
+                        let addLetter10 = SKAction.move(to: CGPoint(x: 210, y: -400), duration: TimeInterval(0.25))
+                        
+                        self.letter10.run(addLetter10, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            if letter11.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 11 was pressed and should be replaced with a vowel")
+                    let removeLetter11 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter11.run(removeLetter11, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[2][0] = newLetter
+                        self.letter11.texture = SKTexture(imageNamed: self.arrayOfLetters[2][0])
+                        
+                        self.letter11.position = CGPoint(x: -190, y: 600)
+                        
+                        let addLetter11 = SKAction.move(to: CGPoint(x: -190, y: -300), duration: TimeInterval(0.25))
+                        
+                        self.letter11.run(addLetter11, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            
+            
+            
+            if letter12.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 12 was pressed and should be replaced with a vowel")
+                    let removeLetter12 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter12.run(removeLetter12, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[2][1] = newLetter
+                        self.letter12.texture = SKTexture(imageNamed: self.arrayOfLetters[2][1])
+                        
+                        self.letter12.position = CGPoint(x: -90, y: 600)
+                        
+                        let addLetter12 = SKAction.move(to: CGPoint(x: -90, y: -300), duration: TimeInterval(0.25))
+                        
+                        self.letter12.run(addLetter12, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            if letter13.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 13 was pressed and should be replaced with a vowel")
+                    let removeLetter13 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter13.run(removeLetter13, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[2][2] = newLetter
+                        self.letter13.texture = SKTexture(imageNamed: self.arrayOfLetters[2][2])
+                        
+                        self.letter13.position = CGPoint(x: 10, y: 600)
+                        
+                        let addLetter13 = SKAction.move(to: CGPoint(x: 10, y: -300), duration: TimeInterval(0.25))
+                        
+                        self.letter13.run(addLetter13, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            if letter14.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 14 was pressed and should be replaced with a vowel")
+                    let removeLetter14 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter14.run(removeLetter14, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[2][3] = newLetter
+                        self.letter14.texture = SKTexture(imageNamed: self.arrayOfLetters[2][3])
+                        
+                        self.letter14.position = CGPoint(x: 110, y: 600)
+                        
+                        let addLetter14 = SKAction.move(to: CGPoint(x: 110, y: -300), duration: TimeInterval(0.25))
+                        
+                        self.letter14.run(addLetter14, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            
+            if letter15.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 15 was pressed and should be replaced with a vowel")
+                    let removeLetter15 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter15.run(removeLetter15, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[2][4] = newLetter
+                        self.letter15.texture = SKTexture(imageNamed: self.arrayOfLetters[2][4])
+                        
+                        self.letter15.position = CGPoint(x: 210, y: 600)
+                        
+                        let addLetter15 = SKAction.move(to: CGPoint(x: 210, y: -300), duration: TimeInterval(0.25))
+                        
+                        self.letter15.run(addLetter15, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            if letter16.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 16 was pressed and should be replaced with a vowel")
+                    let removeLetter16 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter16.run(removeLetter16, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[3][0] = newLetter
+                        self.letter16.texture = SKTexture(imageNamed: self.arrayOfLetters[3][0])
+                        
+                        self.letter16.position = CGPoint(x: -190, y: 600)
+                        
+                        let addLetter16 = SKAction.move(to: CGPoint(x: -190, y: -200), duration: TimeInterval(0.25))
+                        
+                        self.letter16.run(addLetter16, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            if letter17.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 17 was pressed and should be replaced with a vowel")
+                    let removeLetter17 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter17.run(removeLetter17, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[3][1] = newLetter
+                        self.letter17.texture = SKTexture(imageNamed: self.arrayOfLetters[3][1])
+                        
+                        self.letter17.position = CGPoint(x: -90, y: 600)
+                        
+                        let addLetter17 = SKAction.move(to: CGPoint(x: -90, y: -200), duration: TimeInterval(0.25))
+                        
+                        self.letter17.run(addLetter17, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            if letter18.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 18 was pressed and should be replaced with a vowel")
+                    let removeLetter18 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter18.run(removeLetter18, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[3][2] = newLetter
+                        self.letter18.texture = SKTexture(imageNamed: self.arrayOfLetters[3][2])
+                        
+                        self.letter18.position = CGPoint(x: 10, y: 600)
+                        
+                        let addLetter18 = SKAction.move(to: CGPoint(x: 10, y: -200), duration: TimeInterval(0.25))
+                        
+                        self.letter18.run(addLetter18, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            
+            if letter19.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 19 was pressed and should be replaced with a vowel")
+                    let removeLetter19 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter19.run(removeLetter19, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[3][3] = newLetter
+                        self.letter19.texture = SKTexture(imageNamed: self.arrayOfLetters[3][3])
+                        
+                        self.letter19.position = CGPoint(x: 110, y: 600)
+                        
+                        let addLetter19 = SKAction.move(to: CGPoint(x: 110, y: -200), duration: TimeInterval(0.25))
+                        
+                        self.letter19.run(addLetter19, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            if letter20.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 20 was pressed and should be replaced with a vowel")
+                    let removeLetter20 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter20.run(removeLetter20, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[3][4] = newLetter
+                        self.letter20.texture = SKTexture(imageNamed: self.arrayOfLetters[3][4])
+                        
+                        self.letter20.position = CGPoint(x: 210, y: 600)
+                        
+                        let addLetter20 = SKAction.move(to: CGPoint(x: 210, y: -200), duration: TimeInterval(0.25))
+                        
+                        self.letter20.run(addLetter20, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            if letter21.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 21 was pressed and should be replaced with a vowel")
+                    let removeLetter21 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter21.run(removeLetter21, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[4][0] = newLetter
+                        self.letter21.texture = SKTexture(imageNamed: self.arrayOfLetters[4][0])
+                        
+                        self.letter21.position = CGPoint(x: -190, y: 600)
+                        
+                        let addLetter21 = SKAction.move(to: CGPoint(x: -190, y: -100), duration: TimeInterval(0.25))
+                        
+                        self.letter21.run(addLetter21, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            if letter22.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 22 was pressed and should be replaced with a vowel")
+                    let removeLetter22 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter22.run(removeLetter22, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[4][1] = newLetter
+                        self.letter22.texture = SKTexture(imageNamed: self.arrayOfLetters[4][1])
+                        
+                        self.letter22.position = CGPoint(x: -90, y: 600)
+                        
+                        let addLetter22 = SKAction.move(to: CGPoint(x: -90, y: -100), duration: TimeInterval(0.25))
+                        
+                        self.letter22.run(addLetter22, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            if letter23.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 23 was pressed and should be replaced with a vowel")
+                    let removeLetter23 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter23.run(removeLetter23, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[4][2] = newLetter
+                        self.letter23.texture = SKTexture(imageNamed: self.arrayOfLetters[4][2])
+                        
+                        self.letter23.position = CGPoint(x: 10, y: 600)
+                        
+                        let addLetter23 = SKAction.move(to: CGPoint(x: 10, y: -100), duration: TimeInterval(0.25))
+                        
+                        self.letter23.run(addLetter23, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            if letter24.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 24 was pressed and should be replaced with a vowel")
+                    let removeLetter24 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter24.run(removeLetter24, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[4][3] = newLetter
+                        self.letter24.texture = SKTexture(imageNamed: self.arrayOfLetters[4][3])
+                        
+                        self.letter24.position = CGPoint(x: 110, y: 600)
+                        
+                        let addLetter24 = SKAction.move(to: CGPoint(x: 110, y: -100), duration: TimeInterval(0.25))
+                        
+                        self.letter24.run(addLetter24, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
+            
+            if letter25.contains(location) {
+                
+                if awaitingLetterReplacement {
+                    
+                    print("Letter 25 was pressed and should be replaced with a vowel")
+                    let removeLetter25 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
+                    
+                    letter25.run(removeLetter25, completion: {
+                        
+                        let newLetter = self.pickVowel()
+                        self.arrayOfLetters[4][4] = newLetter
+                        self.letter25.texture = SKTexture(imageNamed: self.arrayOfLetters[4][4])
+                        
+                        self.letter25.position = CGPoint(x: 210, y: 600)
+                        
+                        let addLetter25 = SKAction.move(to: CGPoint(x: 210, y: -100), duration: TimeInterval(0.25))
+                        
+                        self.letter25.run(addLetter25, completion: {
+                            
+                            numStarsCollected -= 1
+                            self.numBonusStarsLabel.text = "\(numStarsCollected)"
+                            awaitingLetterReplacement = false
+                            //
+                        })
+                    })
+                }
+            }
+            
             
             
         }
