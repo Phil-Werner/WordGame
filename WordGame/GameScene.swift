@@ -2136,36 +2136,54 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             
             if buyVowelButton.contains(location) {
-                print("Buy vowel button was pressed")
-                buyVowelButton.fillColor = .blue
                 
-                awaitingLetterReplacement = true
-                
-                let wait = SKAction.wait(forDuration: 0.2)
-                
-                self.correctWordString.fontSize = 35
-                self.correctWordString.text = "Choose a letter!"
-                
-                
-                
-                run(wait, completion: {
+                if (numStarsCollected == 0) {
                     
-                    self.buyVowelButton.fillColor = .white
+                    buyVowelButton.fillColor = .red
+                    let wait = SKAction.wait(forDuration: 0.2)
                     
-                    
-                })
+                    run(wait, completion: {
+                        
+                        self.buyVowelButton.fillColor = .white
+                        
+                        
+                    })
+                }
                 
-                
-                let scaleUpAction = SKAction.scale(to: 1.5, duration: 0.3)
-                let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
-                let actionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction])
-                
-                correctWordString.run(actionSequence, completion: {
+                if (numStarsCollected > 0) {
+                    
+                    print("Buy vowel button was pressed")
+                    buyVowelButton.fillColor = .blue
+                    
+                    awaitingLetterReplacement = true
+                    
+                    let wait = SKAction.wait(forDuration: 0.2)
+                    
+                    self.correctWordString.fontSize = 35
+                    self.correctWordString.text = "Choose a letter!"
                     
                     
-                    //self.correctWordString.fontSize = 20
-                    self.correctWordString.text = ""
-                })
+                    
+                    run(wait, completion: {
+                        
+                        self.buyVowelButton.fillColor = .white
+                        
+                        
+                    })
+                    
+                    
+                    let scaleUpAction = SKAction.scale(to: 1.5, duration: 0.3)
+                    let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
+                    let actionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction])
+                    
+                    correctWordString.run(actionSequence, completion: {
+                        
+                        
+                        //self.correctWordString.fontSize = 20
+                        self.correctWordString.text = ""
+                    })
+                    
+                }
                 
               //  let scene = BonusScene(fileNamed: "BonusScene")!
               //  scene.scaleMode = .aspectFill
@@ -2941,5 +2959,5 @@ class GameScene: SKScene {
             
         }
     }
-    
+
 }
