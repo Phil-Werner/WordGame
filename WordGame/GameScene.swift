@@ -14,6 +14,7 @@ struct Square {
     let color: UIColor
 }
 
+var finalScore = 0
 var numThreeLetterWords = 0
 var numFourLetterWords = 0
 var numFiveLetterWords = 0
@@ -1674,13 +1675,9 @@ class GameScene: SKScene {
             numSixLetterWords += 1
             return 3000
         }
-        if (chosenWord.count == 7) {
+        if (chosenWord.count >= 7) {
             numSevenLetterWords += 1
             return 5000
-        }
-        if (chosenWord.count == 8){
-            numEightLetterWords += 1
-            return 10000
         }
         
         return 0
@@ -2954,8 +2951,6 @@ class GameScene: SKScene {
                     })
                 }
             }
-            
-            
             
         }
     }

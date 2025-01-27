@@ -9,11 +9,15 @@ import SpriteKit
 
 class ScoreScene: SKScene {
         //print("got here")
+    
+        var menuButton = SKShapeNode(rectOf: CGSize(width: 300, height: 100))
         
         
          override func didMove(to view: SKView) {
             print("got here")
             backgroundColor = .yellow
+             
+            finalScore = numThreeLetterWords * 100 + numFourLetterWords * 350 + numFiveLetterWords * 1000 + numSixLetterWords * 3000 + numSevenLetterWords * 5000 + numStarsCollected * 2500
             
             print("numThreeLetterwords = ", numThreeLetterWords)
              
@@ -215,6 +219,37 @@ class ScoreScene: SKScene {
                                         starScoreLabel.position = CGPoint(x: 160, y: -60)
                                             
                                         self.addChild(starScoreLabel)
+                                        
+                                        self.run(wait, completion: {
+                                            
+                                            let finalScoreLabel = SKLabelNode(fontNamed: "Chalkduster")
+                                            
+                                            
+                                            
+                                            finalScoreLabel.text = "Final Score: \(finalScore) "
+                                            finalScoreLabel.fontSize = 50
+                                            finalScoreLabel.fontColor = SKColor.black
+                                            finalScoreLabel.position = CGPoint(x: 0, y: -200)
+                                            
+                                            self.addChild(finalScoreLabel)
+                                            
+                                            self.run(wait, completion: {
+                                                
+                                                self.menuButton.fillColor = .white
+                                                self.menuButton.position = CGPoint(x: 0, y: -330)
+                                                self.menuButton.strokeColor = .black
+                                                self.menuButton.lineWidth = 3
+                                                self.addChild(self.menuButton)
+                                                
+                                                let menuString = SKLabelNode(fontNamed: "Chalkduster")
+                                                menuString.text = "Back to Menu"
+                                                menuString.fontSize = 35
+                                                menuString.fontColor = SKColor.black
+                                                menuString.position = CGPoint(x: 0, y: -340)
+                                                self.addChild(menuString)
+                                            })
+                                            
+                                        })
                                     })
                                     
                                 })
