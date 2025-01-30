@@ -277,6 +277,28 @@ class ScoreScene: SKScene {
                 
             }
         )
+             
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("got over here")
+        
+        for touch: AnyObject in touches {
+            let location = touch.location(in: self)
+            
+            if menuButton.contains(location) {
+                print("menu button was pressed")
+              //  startButton.fillColor = .red
+                
+                let scene = MenuScene(fileNamed: "MenuScene")!
+                scene.scaleMode = .aspectFill
+               // scene.size = (CGSize(width: 10, height: 50))
+              //  scene.scaleMode = SKSceneScaleMode.resizeFill
+                let transition = SKTransition.doorway(withDuration: 2)
+                self.view?.presentScene(scene, transition: transition)
+                
+            }
+        }
     }
 }
 
