@@ -14,6 +14,7 @@ struct Square {
     let color: UIColor
 }
 
+var highScore = 0
 var finalScore = 0
 var numThreeLetterWords = 0
 var numFourLetterWords = 0

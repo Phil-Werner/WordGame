@@ -48,12 +48,24 @@ class MenuScene: SKScene {
         
         let actionMove3 = SKAction.move(to: CGPoint(x: 130, y: 200), duration: TimeInterval(0.25))
         
+        let highScoreText = SKLabelNode(fontNamed: "Ariel")
+        highScoreText.text = "High Score: "
+        highScoreText.fontSize = 40
+        highScoreText.fontColor = SKColor.black
+        highScoreText.position = CGPoint(x: -40, y: 0)
         
+        let highScoreLabel = SKLabelNode(fontNamed: "Ariel")
+        highScoreLabel.text = " \(highScore)"
+        highScoreLabel.fontSize = 40
+        highScoreLabel.fontColor = SKColor.black
+        highScoreLabel.position = CGPoint(x: 130, y:0)
         
-        
+        addChild(highScoreLabel)
+        addChild(highScoreText)
         addChild(firstWord)
         addChild(secondWord)
         addChild(thirdWord)
+        
         
         firstWord.run(actionMove, completion: {
             secondWord.run(actionMove2, completion: {

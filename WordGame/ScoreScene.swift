@@ -290,6 +290,10 @@ class ScoreScene: SKScene {
                 print("menu button was pressed")
               //  startButton.fillColor = .red
                 
+                if (finalScore > highScore) {
+                    highScore = finalScore
+                }
+                
                 let scene = MenuScene(fileNamed: "MenuScene")!
                 scene.scaleMode = .aspectFill
                // scene.size = (CGSize(width: 10, height: 50))
