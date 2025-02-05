@@ -294,6 +294,13 @@ class ScoreScene: SKScene {
                     highScore = finalScore
                 }
                 
+                numThreeLetterWords = 0
+                numFourLetterWords = 0
+                numFiveLetterWords = 0
+                numSixLetterWords = 0
+                numSevenLetterWords = 0
+                numStarsCollected = 2
+                
                 let scene = MenuScene(fileNamed: "MenuScene")!
                 scene.scaleMode = .aspectFill
                // scene.size = (CGSize(width: 10, height: 50))
