@@ -12,6 +12,7 @@
 		599B1B442C48BFB400051B8A /* BonusScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599B1B432C48BFB400051B8A /* BonusScene.swift */; };
 		599B1B482C48C15B00051B8A /* BonusScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 599B1B472C48C15B00051B8A /* BonusScene.sks */; };
 		59A0204F2CB8D040008AEB29 /* star.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 59A0204E2CB8D03F008AEB29 /* star.atlas */; };
+		59ACC9F62D571AC800715E9A /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 59ACC9F52D571AC800715E9A /* pop.wav */; };
 		59B01D222BD36D7B006779DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D212BD36D7B006779DC /* AppDelegate.swift */; };
 		59B01D242BD36D7B006779DC /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D232BD36D7B006779DC /* GameScene.sks */; };
 		59B01D262BD36D7B006779DC /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 59B01D252BD36D7B006779DC /* Actions.sks */; };
@@ -77,6 +78,7 @@
 		599B1B432C48BFB400051B8A /* BonusScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusScene.swift; sourceTree = "<group>"; };
 		599B1B472C48C15B00051B8A /* BonusScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BonusScene.sks; sourceTree = "<group>"; };
 		59A0204E2CB8D03F008AEB29 /* star.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = star.atlas; sourceTree = SOURCE_ROOT; };
+		59ACC9F52D571AC800715E9A /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		59B01D1E2BD36D7B006779DC /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59B01D212BD36D7B006779DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59B01D232BD36D7B006779DC /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -147,6 +149,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59ACC9F42D571AC800715E9A /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				59ACC9F52D571AC800715E9A /* pop.wav */,
+			);
+			path = sounds;
+			sourceTree = SOURCE_ROOT;
+		};
 		59B01D152BD36D7A006779DC = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +189,7 @@
 				59B01D2E2BD36D7F006779DC /* Assets.xcassets */,
 				59B01D302BD36D7F006779DC /* LaunchScreen.storyboard */,
 				59B01D562BD3A262006779DC /* letterA.png */,
+				59ACC9F42D571AC800715E9A /* sounds */,
 				59A0204E2CB8D03F008AEB29 /* star.atlas */,
 				59B01D582BDFBE16006779DC /* A.png */,
 				59B01D5A2BDFC72E006779DC /* B.png */,
@@ -348,6 +359,7 @@
 				59B01D2D2BD36D7B006779DC /* Main.storyboard in Resources */,
 				59B01D732BDFC7CC006779DC /* N.png in Resources */,
 				59B01D242BD36D7B006779DC /* GameScene.sks in Resources */,
+				59ACC9F62D571AC800715E9A /* pop.wav in Resources */,
 				59B01D5B2BDFC72F006779DC /* B.png in Resources */,
 				599B1B482C48C15B00051B8A /* BonusScene.sks in Resources */,
 				59B01D2F2BD36D7F006779DC /* Assets.xcassets in Resources */,

@@ -32,6 +32,9 @@ var awaitingLetterReplacement = false
 
 class GameScene: SKScene {
     
+    //let soundEffect = SKAudioNode(fileNamed: "pop.wav")
+    
+    let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
     
     var buyVowelButton  = SKShapeNode(rectOf: CGSize(width: 200, height: 80))
     
@@ -242,6 +245,7 @@ class GameScene: SKScene {
         addChild(currentScore)
         addChild(timeLeft)
         addChild(numBonusStarsLabel)
+       // addChild(soundEffect)
         
         //arrayOfLetters[0][0] = "A"
         
@@ -498,6 +502,7 @@ class GameScene: SKScene {
         
         
         letter1.run(actionMove, completion: {
+            self.run(self.soundEffect)
             moveLetter2()
         })
         
@@ -509,6 +514,7 @@ class GameScene: SKScene {
        //     let actionMove2 = SKAction.move(to: CGPoint(x: -90, y: -500),
         //                                    duration: TimeInterval(0.25)
         //    )
+            self.run(self.soundEffect)
             letter2.run(actionMove2, completion: {
                 moveLetter3()
             })
@@ -520,7 +526,7 @@ class GameScene: SKScene {
             letter3.position = CGPoint(x: 10, y: 600)
             addChild(letter3)
             
-            
+            self.run(self.soundEffect)
             letter3.run(actionMove3, completion: {
                 moveLetter4()
             })
@@ -531,7 +537,7 @@ class GameScene: SKScene {
             letter4.position = CGPoint(x: 110, y: 600)
             addChild(letter4)
             
-            
+            self.run(self.soundEffect)
             letter4.run(actionMove4, completion: {
                 moveLetter5()
             })
@@ -542,7 +548,7 @@ class GameScene: SKScene {
             letter5.position = CGPoint(x: 210, y: 600)
             addChild(letter5)
             
-            
+            self.run(self.soundEffect)
             letter5.run(actionMove5, completion: {
                  moveLetter6()
             })
@@ -553,7 +559,7 @@ class GameScene: SKScene {
             letter6.position = CGPoint(x: -190, y: 600)
             addChild(letter6)
             
-           
+            self.run(self.soundEffect)
             letter6.run(actionMove6, completion: {
                  moveLetter7()
             })
@@ -564,7 +570,7 @@ class GameScene: SKScene {
             letter7.position = CGPoint(x: -90, y: 600)
             addChild(letter7)
             
-            
+            self.run(self.soundEffect)
             letter7.run(actionMove7, completion: {
                  moveLetter8()
             })
@@ -575,7 +581,7 @@ class GameScene: SKScene {
             letter8.position = CGPoint(x: 10, y: 600)
             addChild(letter8)
             
-           
+            self.run(self.soundEffect)
             letter8.run(actionMove8, completion: {
                  moveLetter9()
             })
@@ -586,7 +592,7 @@ class GameScene: SKScene {
             letter9.position = CGPoint(x: 110, y: 600)
             addChild(letter9)
             
-            
+            self.run(self.soundEffect)
             letter9.run(actionMove9, completion: {
                  moveLetter10()
             })
@@ -597,7 +603,7 @@ class GameScene: SKScene {
             letter10.position = CGPoint(x: 210, y: 600)
             addChild(letter10)
             
-            
+            self.run(self.soundEffect)
             letter10.run(actionMove10, completion: {
                  moveLetter11()
             })
@@ -608,7 +614,7 @@ class GameScene: SKScene {
             letter11.position = CGPoint(x: -190, y: 600)
             addChild(letter11)
             
-            
+            self.run(self.soundEffect)
             letter11.run(actionMove11, completion: {
                  moveLetter12()
             })
@@ -619,7 +625,7 @@ class GameScene: SKScene {
             letter12.position = CGPoint(x: -90, y: 600)
             addChild(letter12)
             
-            
+            self.run(self.soundEffect)
             letter12.run(actionMove12, completion: {
                 moveLetter13()
             })
@@ -630,7 +636,7 @@ class GameScene: SKScene {
             letter13.position = CGPoint(x: 10, y: 600)
             addChild(letter13)
             
-            
+            self.run(self.soundEffect)
             letter13.run(actionMove13, completion: {
                  moveLetter14()
             })
@@ -641,7 +647,7 @@ class GameScene: SKScene {
             letter14.position = CGPoint(x: 110, y: 600)
             addChild(letter14)
             
-            
+            self.run(self.soundEffect)
             letter14.run(actionMove14, completion: {
                  moveLetter15()
             })
@@ -652,7 +658,7 @@ class GameScene: SKScene {
             letter15.position = CGPoint(x: 210, y: 600)
             addChild(letter15)
             
-            
+            self.run(self.soundEffect)
             letter15.run(actionMove15, completion: {
                  moveLetter16()
             })
@@ -663,7 +669,7 @@ class GameScene: SKScene {
             letter16.position = CGPoint(x: -190, y: 600)
             addChild(letter16)
             
-            
+            self.run(self.soundEffect)
             letter16.run(actionMove16, completion: {
                  moveLetter17()
             })
@@ -674,7 +680,7 @@ class GameScene: SKScene {
             letter17.position = CGPoint(x: -90, y: 600)
             addChild(letter17)
             
-            
+            self.run(self.soundEffect)
             letter17.run(actionMove17, completion: {
                  moveLetter18()
             })
@@ -685,7 +691,7 @@ class GameScene: SKScene {
             letter18.position = CGPoint(x: 10, y: 600)
             addChild(letter18)
             
-            
+            self.run(self.soundEffect)
             letter18.run(actionMove18, completion: {
                  moveLetter19()
             })
@@ -696,7 +702,7 @@ class GameScene: SKScene {
             letter19.position = CGPoint(x: 110, y: 600)
             addChild(letter19)
             
-            
+            self.run(self.soundEffect)
             letter19.run(actionMove19, completion: {
                  moveLetter20()
             })
@@ -707,7 +713,7 @@ class GameScene: SKScene {
             letter20.position = CGPoint(x: 210, y: 600)
             addChild(letter20)
             
-            
+            self.run(self.soundEffect)
             letter20.run(actionMove20, completion: {
                  moveLetter21()
             })
@@ -718,7 +724,7 @@ class GameScene: SKScene {
             letter21.position = CGPoint(x: -190, y: 600)
             addChild(letter21)
             
-            
+            self.run(self.soundEffect)
             letter21.run(actionMove21, completion: {
                  moveLetter22()
             })
@@ -729,7 +735,7 @@ class GameScene: SKScene {
             letter22.position = CGPoint(x: -90, y: 600)
             addChild(letter22)
             
-            
+            self.run(self.soundEffect)
             letter22.run(actionMove22, completion: {
                  moveLetter23()
             })
@@ -740,7 +746,7 @@ class GameScene: SKScene {
             letter23.position = CGPoint(x: 10, y: 600)
             addChild(letter23)
             
-            
+            self.run(self.soundEffect)
             letter23.run(actionMove23, completion: {
                  moveLetter24()
             })
@@ -751,7 +757,7 @@ class GameScene: SKScene {
             letter24.position = CGPoint(x: 110, y: 600)
             addChild(letter24)
             
-            
+            self.run(self.soundEffect)
             letter24.run(actionMove24, completion: {
                  moveLetter25()
             })
@@ -762,7 +768,7 @@ class GameScene: SKScene {
             letter25.position = CGPoint(x: 210, y: 600)
             addChild(letter25)
             
-            
+            self.run(self.soundEffect)
             letter25.run(actionMove25, completion: {
              //   let textureA = SKTexture(imageNamed: "A")
             //    self.letter1.texture = textureA
@@ -772,6 +778,7 @@ class GameScene: SKScene {
                  //   self.timeLeftAsInt = self.timeLeftAsInt - 1
                    // self.timeLeft.text = "\(self.timeLeftAsInt)"
                 
+                self.run(self.soundEffect)
                 beginCountdown()
                     
               //  })

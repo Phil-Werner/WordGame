@@ -22,6 +22,9 @@ class MenuScene: SKScene {
         print("got here")
         backgroundColor = .brown
         
+       // let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
+       // run(soundEffect)
+        
         
         let firstWord = SKLabelNode(fontNamed: "Chalkduster")
         firstWord.text = "The"
