@@ -24,6 +24,8 @@ class GameViewController: UIViewController {
                 view.presentScene(scene)
             }
             
+         //   view.scene?.run(SKAction.repeatForever(SKAction.playSoundFileNamed("background.mp3", waitForCompletion: true)))
+            
             view.ignoresSiblingOrder = true
             
             view.showsFPS = true

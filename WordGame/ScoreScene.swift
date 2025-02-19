@@ -7,6 +7,7 @@
 
 import SpriteKit
 
+
 class ScoreScene: SKScene {
         //print("got here")
     
@@ -16,6 +17,9 @@ class ScoreScene: SKScene {
          override func didMove(to view: SKView) {
             print("got here")
             backgroundColor = .yellow
+             
+        //     let music2 = SKAudioNode(fileNamed: "background.mp3")
+      //       scoreScene.addChild(music2)
              
             finalScore = numThreeLetterWords * 100 + numFourLetterWords * 350 + numFiveLetterWords * 1000 + numSixLetterWords * 3000 + numSevenLetterWords * 5000 + numStarsCollected * 2500
             

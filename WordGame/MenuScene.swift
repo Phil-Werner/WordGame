@@ -22,8 +22,14 @@ class MenuScene: SKScene {
         print("got here")
         backgroundColor = .brown
         
-       // let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
-       // run(soundEffect)
+        
+       // self.run(SKAction.playSoundFileNamed("background.mp3", waitForCompletion: false))
+       // let music = SKAudioNode(fileNamed: "background.mp3")
+        
+       // self.run(SKAction.repeatForever(SKAction.playSoundFileNamed("background.mp3", waitForCompletion: true)))
+        
+        let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
+        run(soundEffect)
         
         
         let firstWord = SKLabelNode(fontNamed: "Chalkduster")
@@ -63,6 +69,7 @@ class MenuScene: SKScene {
         highScoreLabel.fontColor = SKColor.black
         highScoreLabel.position = CGPoint(x: 130, y:0)
         
+      //  addChild(music)
         addChild(highScoreLabel)
         addChild(highScoreText)
         addChild(firstWord)

@@ -35,6 +35,7 @@ class GameScene: SKScene {
     //let soundEffect = SKAudioNode(fileNamed: "pop.wav")
     
     let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
+    let cNote = SKAction.playSoundFileNamed("01-C.wav", waitForCompletion: false)
     
     var buyVowelButton  = SKShapeNode(rectOf: CGSize(width: 200, height: 80))
     
@@ -160,8 +161,14 @@ class GameScene: SKScene {
     let letter25 = SKSpriteNode(imageNamed: "Y")
     
     override func didMove(to view: SKView) {
-        print("😆 1")
         backgroundColor = .red
+        
+      //  let music = SKAudioNode(fileNamed: "background.mp3")
+      //  addChild(music)
+        
+//        self.run(SKAction.repeatForever(SKAction.playSoundFileNamed("background.mp3", waitForCompletion: true)))
+        
+      //  run(cNote)
         
         buildStar()
         animateStar()
@@ -245,6 +252,7 @@ class GameScene: SKScene {
         addChild(currentScore)
         addChild(timeLeft)
         addChild(numBonusStarsLabel)
+    //    addChild(music)
        // addChild(soundEffect)
         
         //arrayOfLetters[0][0] = "A"
@@ -502,7 +510,7 @@ class GameScene: SKScene {
         
         
         letter1.run(actionMove, completion: {
-            self.run(self.soundEffect)
+    //        self.run(self.soundEffect)
             moveLetter2()
         })
         
@@ -796,9 +804,11 @@ class GameScene: SKScene {
                     
                     print("roundNumber is ", self.roundNumber)
                     
-                    if (self.roundNumber > 1) {
+                    if (self.roundNumber > 3) {
                         
                         print ("round number is higher than 5")
+                        
+                      //  music.run(SKAction.stop())
                         
                         let scoreScene = ScoreScene(fileNamed: "ScoreScene")!
                         scoreScene.scaleMode = .aspectFill
@@ -1128,6 +1138,8 @@ class GameScene: SKScene {
                     print("chosenWord = ", chosenWord)
                     
                     displayedWord.text = chosenWord
+                    
+                    run(cNote)
                   //  print("displayedWord.text = ", displayedWord.text)
                 }
                 
@@ -1145,6 +1157,10 @@ class GameScene: SKScene {
                         
                         chosenWord.append(arrayOfLetters[0][0])
                         print("chosenWord = ", chosenWord)
+                        
+                        print("HEEEELLLLLLLOOOOOOO")
+                        
+                        run(cNote)
                         
                         displayedWord.text = chosenWord
                         
