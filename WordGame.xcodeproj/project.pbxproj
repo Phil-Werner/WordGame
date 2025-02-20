@@ -13,6 +13,14 @@
 		599B1B482C48C15B00051B8A /* BonusScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 599B1B472C48C15B00051B8A /* BonusScene.sks */; };
 		599BD4942D6053F800D202AA /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4932D6053F700D202AA /* background.mp3 */; };
 		599BD4962D65D2F900D202AA /* 01-C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4952D65D2F900D202AA /* 01-C.wav */; };
+		599BD4982D65F5FE00D202AA /* 02-D.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4972D65F5FE00D202AA /* 02-D.wav */; };
+		599BD49A2D65F64900D202AA /* 03-E.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4992D65F64800D202AA /* 03-E.wav */; };
+		599BD49C2D65F70D00D202AA /* 04-F.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD49B2D65F70D00D202AA /* 04-F.wav */; };
+		599BD49E2D65F7F300D202AA /* 05-G.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD49D2D65F7F300D202AA /* 05-G.wav */; };
+		599BD4A02D65F87500D202AA /* 06-A.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD49F2D65F87500D202AA /* 06-A.wav */; };
+		599BD4A22D65F90300D202AA /* 07-B.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4A12D65F90300D202AA /* 07-B.wav */; };
+		599BD4A42D65F96A00D202AA /* 08-C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4A32D65F96900D202AA /* 08-C.wav */; };
+		599BD4A62D66D6F000D202AA /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4A52D66D6F000D202AA /* error.wav */; };
 		59A0204F2CB8D040008AEB29 /* star.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 59A0204E2CB8D03F008AEB29 /* star.atlas */; };
 		59ACC9F62D571AC800715E9A /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 59ACC9F52D571AC800715E9A /* pop.wav */; };
 		59B01D222BD36D7B006779DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D212BD36D7B006779DC /* AppDelegate.swift */; };
@@ -81,6 +89,14 @@
 		599B1B472C48C15B00051B8A /* BonusScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = BonusScene.sks; sourceTree = "<group>"; };
 		599BD4932D6053F700D202AA /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = background.mp3; sourceTree = "<group>"; };
 		599BD4952D65D2F900D202AA /* 01-C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "01-C.wav"; sourceTree = "<group>"; };
+		599BD4972D65F5FE00D202AA /* 02-D.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "02-D.wav"; sourceTree = "<group>"; };
+		599BD4992D65F64800D202AA /* 03-E.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "03-E.wav"; sourceTree = "<group>"; };
+		599BD49B2D65F70D00D202AA /* 04-F.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "04-F.wav"; sourceTree = "<group>"; };
+		599BD49D2D65F7F300D202AA /* 05-G.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "05-G.wav"; sourceTree = "<group>"; };
+		599BD49F2D65F87500D202AA /* 06-A.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "06-A.wav"; sourceTree = "<group>"; };
+		599BD4A12D65F90300D202AA /* 07-B.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "07-B.wav"; sourceTree = "<group>"; };
+		599BD4A32D65F96900D202AA /* 08-C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "08-C.wav"; sourceTree = "<group>"; };
+		599BD4A52D66D6F000D202AA /* error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = error.wav; sourceTree = "<group>"; };
 		59A0204E2CB8D03F008AEB29 /* star.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = star.atlas; sourceTree = SOURCE_ROOT; };
 		59ACC9F52D571AC800715E9A /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		59B01D1E2BD36D7B006779DC /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,6 +172,14 @@
 		59ACC9F42D571AC800715E9A /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				599BD4A52D66D6F000D202AA /* error.wav */,
+				599BD4A32D65F96900D202AA /* 08-C.wav */,
+				599BD4A12D65F90300D202AA /* 07-B.wav */,
+				599BD49F2D65F87500D202AA /* 06-A.wav */,
+				599BD49D2D65F7F300D202AA /* 05-G.wav */,
+				599BD49B2D65F70D00D202AA /* 04-F.wav */,
+				599BD4992D65F64800D202AA /* 03-E.wav */,
+				599BD4972D65F5FE00D202AA /* 02-D.wav */,
 				599BD4952D65D2F900D202AA /* 01-C.wav */,
 				59ACC9F52D571AC800715E9A /* pop.wav */,
 				599BD4932D6053F700D202AA /* background.mp3 */,
@@ -354,10 +378,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599BD4A02D65F87500D202AA /* 06-A.wav in Resources */,
 				59B01D772BDFC7E2006779DC /* P.png in Resources */,
 				59B01D7D2BDFC7F5006779DC /* S.png in Resources */,
 				59B01D6F2BDFC7BD006779DC /* L.png in Resources */,
+				599BD4A42D65F96A00D202AA /* 08-C.wav in Resources */,
 				59B01D612BDFC787006779DC /* E.png in Resources */,
+				599BD4A62D66D6F000D202AA /* error.wav in Resources */,
 				59B01D5D2BDFC76F006779DC /* C.png in Resources */,
 				59B01D6B2BDFC7AF006779DC /* J.png in Resources */,
 				59B01D872BDFC822006779DC /* X.png in Resources */,
@@ -379,13 +406,18 @@
 				599BD4962D65D2F900D202AA /* 01-C.wav in Resources */,
 				59801FB72C100E9F005E314D /* MenuScene.sks in Resources */,
 				59B01D892BDFC82F006779DC /* Y.png in Resources */,
+				599BD49A2D65F64900D202AA /* 03-E.wav in Resources */,
 				599BD4942D6053F800D202AA /* background.mp3 in Resources */,
 				59B01D792BDFC7E9006779DC /* Q.png in Resources */,
 				59B01D322BD36D7F006779DC /* LaunchScreen.storyboard in Resources */,
 				59B01D812BDFC804006779DC /* U.png in Resources */,
+				599BD4A22D65F90300D202AA /* 07-B.wav in Resources */,
 				59B01D6D2BDFC7B6006779DC /* K.png in Resources */,
+				599BD49C2D65F70D00D202AA /* 04-F.wav in Resources */,
 				59B01D5F2BDFC781006779DC /* D.png in Resources */,
+				599BD4982D65F5FE00D202AA /* 02-D.wav in Resources */,
 				59B01D7B2BDFC7EE006779DC /* R.png in Resources */,
+				599BD49E2D65F7F300D202AA /* 05-G.wav in Resources */,
 				59B01D262BD36D7B006779DC /* Actions.sks in Resources */,
 				59B01D592BDFBE16006779DC /* A.png in Resources */,
 				59A0204F2CB8D040008AEB29 /* star.atlas in Resources */,

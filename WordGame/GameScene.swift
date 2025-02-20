@@ -36,6 +36,14 @@ class GameScene: SKScene {
     
     let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
     let cNote = SKAction.playSoundFileNamed("01-C.wav", waitForCompletion: false)
+    let dNote = SKAction.playSoundFileNamed("02-D.wav", waitForCompletion: false)
+    let eNote = SKAction.playSoundFileNamed("03-E.wav", waitForCompletion: false)
+    let fNote = SKAction.playSoundFileNamed("04-F.wav", waitForCompletion: false)
+    let gNote = SKAction.playSoundFileNamed("05-G.wav", waitForCompletion: false)
+    let aNote = SKAction.playSoundFileNamed("06-A.wav", waitForCompletion: false)
+    let bNote = SKAction.playSoundFileNamed("07-B.wav", waitForCompletion: false)
+    let secondCNote = SKAction.playSoundFileNamed("08-C.wav", waitForCompletion: false)
+    let uhoh = SKAction.playSoundFileNamed("error.wav", waitForCompletion: false)
     
     var buyVowelButton  = SKShapeNode(rectOf: CGSize(width: 200, height: 80))
     
@@ -1049,6 +1057,46 @@ class GameScene: SKScene {
         return misspelledRange.location == NSNotFound
     }
     
+    func playMusicNote() {
+        
+        print ("function play music note was called")
+        print ("chosenword dot count = ", chosenWord.count)
+        //run(cNote)
+        
+        if (chosenWord.count == 1) {
+            run(cNote)
+        }
+        
+        if (chosenWord.count == 2) {
+            run(dNote)
+        }
+        
+        if (chosenWord.count == 3) {
+            run(eNote)
+        }
+        
+        if (chosenWord.count == 4) {
+            run(fNote)
+        }
+        
+        if (chosenWord.count == 5) {
+            run(gNote)
+        }
+        
+        if (chosenWord.count == 6) {
+            run(aNote)
+        }
+        
+        if (chosenWord.count == 7) {
+            run(bNote)
+        }
+        
+        if (chosenWord.count == 8) {
+            run(secondCNote)
+        }
+        
+    }
+    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         print("array of selected letters in word: ", arrayOfLettersAlreadyInWord)
@@ -1139,7 +1187,9 @@ class GameScene: SKScene {
                     
                     displayedWord.text = chosenWord
                     
-                    run(cNote)
+                    playMusicNote()
+                    
+                  //  run(cNote)
                   //  print("displayedWord.text = ", displayedWord.text)
                 }
                 
@@ -1160,9 +1210,10 @@ class GameScene: SKScene {
                         
                         print("HEEEELLLLLLLOOOOOOO")
                         
-                        run(cNote)
+                        //run(cNote)
                         
                         displayedWord.text = chosenWord
+                        playMusicNote()
                         
                   /*      let scaleUpAction = SKAction.scale(to: 2, duration: 0.3)
                         let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
@@ -1181,6 +1232,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[0][1] = true
                     chosenWord.append(arrayOfLetters[0][1])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1191,6 +1243,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[0][1] = true
                         chosenWord.append(arrayOfLetters[0][1])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1202,6 +1255,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[0][2] = true
                     chosenWord.append(arrayOfLetters[0][2])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1212,6 +1266,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[0][2] = true
                         chosenWord.append(arrayOfLetters[0][2])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1223,6 +1278,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[0][3] = true
                     chosenWord.append(arrayOfLetters[0][3])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1233,6 +1289,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[0][3] = true
                         chosenWord.append(arrayOfLetters[0][3])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1244,6 +1301,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[0][4] = true
                     chosenWord.append(arrayOfLetters[0][4])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1254,6 +1312,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[0][4] = true
                         chosenWord.append(arrayOfLetters[0][4])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1265,6 +1324,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[1][0] = true
                     chosenWord.append(arrayOfLetters[1][0])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1275,6 +1335,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[1][0] = true
                         chosenWord.append(arrayOfLetters[1][0])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1286,6 +1347,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[1][1] = true
                     chosenWord.append(arrayOfLetters[1][1])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1296,6 +1358,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[1][1] = true
                         chosenWord.append(arrayOfLetters[1][1])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1307,6 +1370,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[1][2] = true
                     chosenWord.append(arrayOfLetters[1][2])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1317,6 +1381,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[1][2] = true
                         chosenWord.append(arrayOfLetters[1][2])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1328,6 +1393,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[1][3] = true
                     chosenWord.append(arrayOfLetters[1][3])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1338,6 +1404,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[1][3] = true
                         chosenWord.append(arrayOfLetters[1][3])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1349,6 +1416,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[1][4] = true
                     chosenWord.append(arrayOfLetters[1][4])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1359,6 +1427,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[1][4] = true
                         chosenWord.append(arrayOfLetters[1][4])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1370,6 +1439,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[2][0] = true
                     chosenWord.append(arrayOfLetters[2][0])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1380,6 +1450,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[2][0] = true
                         chosenWord.append(arrayOfLetters[2][0])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1391,6 +1462,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[2][1] = true
                     chosenWord.append(arrayOfLetters[2][1])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1401,6 +1473,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[2][1] = true
                         chosenWord.append(arrayOfLetters[2][1])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1412,6 +1485,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[2][2] = true
                     chosenWord.append(arrayOfLetters[2][2])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1422,6 +1496,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[2][2] = true
                         chosenWord.append(arrayOfLetters[2][2])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1433,6 +1508,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[2][3] = true
                     chosenWord.append(arrayOfLetters[2][3])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1443,6 +1519,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[2][3] = true
                         chosenWord.append(arrayOfLetters[2][3])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1454,6 +1531,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[2][4] = true
                     chosenWord.append(arrayOfLetters[2][4])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1464,6 +1542,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[2][4] = true
                         chosenWord.append(arrayOfLetters[2][4])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1475,6 +1554,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[3][0] = true
                     chosenWord.append(arrayOfLetters[3][0])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1485,6 +1565,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[3][0] = true
                         chosenWord.append(arrayOfLetters[3][0])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1496,6 +1577,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[3][1] = true
                     chosenWord.append(arrayOfLetters[3][1])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1506,6 +1588,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[3][1] = true
                         chosenWord.append(arrayOfLetters[3][1])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1517,6 +1600,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[3][2] = true
                     chosenWord.append(arrayOfLetters[3][2])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1527,6 +1611,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[3][2] = true
                         chosenWord.append(arrayOfLetters[3][2])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1538,6 +1623,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[3][3] = true
                     chosenWord.append(arrayOfLetters[3][3])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1548,6 +1634,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[3][3] = true
                         chosenWord.append(arrayOfLetters[3][3])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1559,6 +1646,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[3][4] = true
                     chosenWord.append(arrayOfLetters[3][4])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1569,6 +1657,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[3][4] = true
                         chosenWord.append(arrayOfLetters[3][4])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1580,6 +1669,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[4][0] = true
                     chosenWord.append(arrayOfLetters[4][0])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1590,6 +1680,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[4][0] = true
                         chosenWord.append(arrayOfLetters[4][0])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1601,6 +1692,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[4][1] = true
                     chosenWord.append(arrayOfLetters[4][1])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1611,6 +1703,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[4][1] = true
                         chosenWord.append(arrayOfLetters[4][1])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1622,6 +1715,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[4][2] = true
                     chosenWord.append(arrayOfLetters[4][2])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1632,6 +1726,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[4][2] = true
                         chosenWord.append(arrayOfLetters[4][2])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1643,6 +1738,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[4][3] = true
                     chosenWord.append(arrayOfLetters[4][3])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1653,6 +1749,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[4][3] = true
                         chosenWord.append(arrayOfLetters[4][3])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -1664,6 +1761,7 @@ class GameScene: SKScene {
                     arrayOfLettersAlreadyInWord[4][4] = true
                     chosenWord.append(arrayOfLetters[4][4])
                     displayedWord.text = chosenWord
+                    playMusicNote()
                 }
                 
                 if (anyLetterSelected) {
@@ -1674,6 +1772,7 @@ class GameScene: SKScene {
                         arrayOfLettersAlreadyInWord[4][4] = true
                         chosenWord.append(arrayOfLetters[4][4])
                         displayedWord.text = chosenWord
+                        playMusicNote()
                     }
                 }
             }
@@ -2012,7 +2111,11 @@ class GameScene: SKScene {
         let wrongWordSequence = SKAction.sequence([wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight,  wrongWordActionMiddle])
         
         if (chosenWord.count <= 2) {
+            
+            self.run(self.uhoh)
+
             displayedWord.run(wrongWordSequence, completion: {
+                
                 
                 self.clearOldSelectedLetters()
                 self.changeLettersToWhite()
@@ -2130,9 +2233,10 @@ class GameScene: SKScene {
             
             else {
                 
-              
+                self.run(self.uhoh)
                 
                 displayedWord.run(wrongWordSequence, completion: {
+                    
                     
                     self.clearOldSelectedLetters()
                     self.changeLettersToWhite()
