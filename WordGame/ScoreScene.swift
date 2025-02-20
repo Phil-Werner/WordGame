@@ -12,7 +12,7 @@ class ScoreScene: SKScene {
         //print("got here")
     
         var menuButton = SKShapeNode(rectOf: CGSize(width: 300, height: 100))
-        
+        let ching = SKAction.playSoundFileNamed("ching.wav", waitForCompletion: false)
         
          override func didMove(to view: SKView) {
             print("got here")
@@ -65,6 +65,7 @@ class ScoreScene: SKScene {
                         threeLetterScoreLabel.position = CGPoint(x: 170, y: 270)
                         
                         self.addChild(threeLetterScoreLabel)
+                        self.run(self.ching)
                         
                         self.run(wait, completion: {
                             
@@ -99,6 +100,8 @@ class ScoreScene: SKScene {
                                     
                                     self.addChild(fourLetterScoreLabel)
                                     
+                                    self.run(self.ching)
+                                    
                                     self.run(wait, completion: {
                                         
                                         let fiveLetter = SKLabelNode(fontNamed: "Chalkduster")
@@ -131,6 +134,8 @@ class ScoreScene: SKScene {
                                                 
                                                 self.addChild(fiveLetterScoreLabel)
                                                 
+                                                self.run(self.ching)
+                                                
                                                 self.run(wait, completion: {
                                                     let sixLetter = SKLabelNode(fontNamed: "Chalkduster")
                                                     sixLetter.text =  "Six Letter Words: "
@@ -160,6 +165,7 @@ class ScoreScene: SKScene {
                                                             sixLetterScoreLabel.position = CGPoint(x: 170, y: 70)
                                                             
                                                             self.addChild(sixLetterScoreLabel)
+                                                            self.run(self.ching)
                                                             
                 self.run(wait, completion: {
                     
@@ -191,6 +197,7 @@ class ScoreScene: SKScene {
                             sevenLetterScoreLabel.position = CGPoint(x: 170, y: 10)
                             
                             self.addChild(sevenLetterScoreLabel)
+                            self.run(self.ching)
                             
                             self.run(wait, completion: {
                                 
@@ -224,6 +231,8 @@ class ScoreScene: SKScene {
                                             
                                         self.addChild(starScoreLabel)
                                         
+                                        self.run(self.ching)
+                                        
                                         self.run(wait, completion: {
                                             
                                             let finalScoreLabel = SKLabelNode(fontNamed: "Chalkduster")
@@ -236,6 +245,8 @@ class ScoreScene: SKScene {
                                             finalScoreLabel.position = CGPoint(x: 0, y: -200)
                                             
                                             self.addChild(finalScoreLabel)
+                                            
+                                            self.run(self.ching)
                                             
                                             self.run(wait, completion: {
                                                 

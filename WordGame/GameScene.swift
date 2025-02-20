@@ -24,6 +24,8 @@ var numSevenLetterWords = 0
 var numEightLetterWords = 0
 var numStarsCollected = 2
 
+var allowGameplay = false
+
 var secondBonusAsInt = 0
 var thirdBonusAsInt = 0
 var bonusLetter = "A"
@@ -34,6 +36,7 @@ class GameScene: SKScene {
     
     //let soundEffect = SKAudioNode(fileNamed: "pop.wav")
     
+    let goodChoice = SKAction.playSoundFileNamed("good.wav", waitForCompletion: false)
     let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
     let cNote = SKAction.playSoundFileNamed("01-C.wav", waitForCompletion: false)
     let dNote = SKAction.playSoundFileNamed("02-D.wav", waitForCompletion: false)
@@ -795,6 +798,7 @@ class GameScene: SKScene {
                    // self.timeLeft.text = "\(self.timeLeftAsInt)"
                 
                 self.run(self.soundEffect)
+                allowGameplay = true
                 beginCountdown()
                     
               //  })
@@ -1174,7 +1178,7 @@ class GameScene: SKScene {
             
             if letter1.contains(location) {
                 
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[0][0] = true
                     letter1.color = .green
@@ -1225,7 +1229,7 @@ class GameScene: SKScene {
                 }
             }
             if letter2.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[0][1] = true
                     letter2.color = .green
@@ -1248,7 +1252,7 @@ class GameScene: SKScene {
                 }
             }
             if letter3.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[0][2] = true
                     letter3.color = .green
@@ -1271,7 +1275,7 @@ class GameScene: SKScene {
                 }
             }
             if letter4.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[0][3] = true
                     letter4.color = .green
@@ -1294,7 +1298,7 @@ class GameScene: SKScene {
                 }
             }
             if letter5.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[0][4] = true
                     letter5.color = .green
@@ -1317,7 +1321,7 @@ class GameScene: SKScene {
                 }
             }
             if letter6.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[1][0] = true
                     letter6.color = .green
@@ -1340,7 +1344,7 @@ class GameScene: SKScene {
                 }
             }
             if letter7.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[1][1] = true
                     letter7.color = .green
@@ -1363,7 +1367,7 @@ class GameScene: SKScene {
                 }
             }
             if letter8.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[1][2] = true
                     letter8.color = .green
@@ -1386,7 +1390,7 @@ class GameScene: SKScene {
                 }
             }
             if letter9.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[1][3] = true
                     letter9.color = .green
@@ -1409,7 +1413,7 @@ class GameScene: SKScene {
                 }
             }
             if letter10.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[1][4] = true
                     letter10.color = .green
@@ -1432,7 +1436,7 @@ class GameScene: SKScene {
                 }
             }
             if letter11.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[2][0] = true
                     letter11.color = .green
@@ -1455,7 +1459,7 @@ class GameScene: SKScene {
                 }
             }
             if letter12.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[2][1] = true
                     letter12.color = .green
@@ -1478,7 +1482,7 @@ class GameScene: SKScene {
                 }
             }
             if letter13.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[2][2] = true
                     letter13.color = .green
@@ -1501,7 +1505,7 @@ class GameScene: SKScene {
                 }
             }
             if letter14.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[2][3] = true
                     letter14.color = .green
@@ -1524,7 +1528,7 @@ class GameScene: SKScene {
                 }
             }
             if letter15.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[2][4] = true
                     letter15.color = .green
@@ -1547,7 +1551,7 @@ class GameScene: SKScene {
                 }
             }
             if letter16.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[3][0] = true
                     letter16.color = .green
@@ -1570,7 +1574,7 @@ class GameScene: SKScene {
                 }
             }
             if letter17.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[3][1] = true
                     letter17.color = .green
@@ -1593,7 +1597,7 @@ class GameScene: SKScene {
                 }
             }
             if letter18.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[3][2] = true
                     letter18.color = .green
@@ -1616,7 +1620,7 @@ class GameScene: SKScene {
                 }
             }
             if letter19.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[3][3] = true
                     letter19.color = .green
@@ -1639,7 +1643,7 @@ class GameScene: SKScene {
                 }
             }
             if letter20.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[3][4] = true
                     letter20.color = .green
@@ -1662,7 +1666,7 @@ class GameScene: SKScene {
                 }
             }
             if letter21.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[4][0] = true
                     letter21.color = .green
@@ -1685,7 +1689,7 @@ class GameScene: SKScene {
                 }
             }
             if letter22.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[4][1] = true
                     letter22.color = .green
@@ -1708,7 +1712,7 @@ class GameScene: SKScene {
                 }
             }
             if letter23.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[4][2] = true
                     letter23.color = .green
@@ -1731,7 +1735,7 @@ class GameScene: SKScene {
                 }
             }
             if letter24.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[4][3] = true
                     letter24.color = .green
@@ -1754,7 +1758,7 @@ class GameScene: SKScene {
                 }
             }
             if letter25.contains(location) {
-                if (!anyLetterSelected) {
+                if (!anyLetterSelected && allowGameplay) {
                     anyLetterSelected = true
                     arrayOfSelectedLetters[4][4] = true
                     letter25.color = .green
@@ -2168,6 +2172,8 @@ class GameScene: SKScene {
                // let bonusActionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction, scaleDownAction])
             
                       
+                run(goodChoice)
+                
                 correctWordString.run(actionSequence, completion: {
                     
                     var tmpstrng = ""
@@ -2180,6 +2186,8 @@ class GameScene: SKScene {
                     tmpstrng.append(" points!")
                     
                     self.correctWordString.text = tmpstrng
+                    
+                    self.run(self.goodChoice)
                     
                     self.correctWordString.run(actionSequence, completion: {
                         
