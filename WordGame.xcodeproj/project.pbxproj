@@ -23,6 +23,8 @@
 		599BD4A62D66D6F000D202AA /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4A52D66D6F000D202AA /* error.wav */; };
 		599BD4A82D673F5800D202AA /* good.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4A72D673F5800D202AA /* good.wav */; };
 		599BD4AA2D6741D800D202AA /* ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4A92D6741D800D202AA /* ching.wav */; };
+		599BD4AC2D682AA600D202AA /* hereWeGo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4AB2D682AA600D202AA /* hereWeGo.wav */; };
+		599BD4AE2D6AD3E200D202AA /* woosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4AD2D6AD3E200D202AA /* woosh.mp3 */; };
 		59A0204F2CB8D040008AEB29 /* star.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 59A0204E2CB8D03F008AEB29 /* star.atlas */; };
 		59ACC9F62D571AC800715E9A /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 59ACC9F52D571AC800715E9A /* pop.wav */; };
 		59B01D222BD36D7B006779DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D212BD36D7B006779DC /* AppDelegate.swift */; };
@@ -101,6 +103,8 @@
 		599BD4A52D66D6F000D202AA /* error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = error.wav; sourceTree = "<group>"; };
 		599BD4A72D673F5800D202AA /* good.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = good.wav; sourceTree = "<group>"; };
 		599BD4A92D6741D800D202AA /* ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ching.wav; sourceTree = "<group>"; };
+		599BD4AB2D682AA600D202AA /* hereWeGo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hereWeGo.wav; sourceTree = "<group>"; };
+		599BD4AD2D6AD3E200D202AA /* woosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = woosh.mp3; sourceTree = "<group>"; };
 		59A0204E2CB8D03F008AEB29 /* star.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = star.atlas; sourceTree = SOURCE_ROOT; };
 		59ACC9F52D571AC800715E9A /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		59B01D1E2BD36D7B006779DC /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +180,8 @@
 		59ACC9F42D571AC800715E9A /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				599BD4AD2D6AD3E200D202AA /* woosh.mp3 */,
+				599BD4AB2D682AA600D202AA /* hereWeGo.wav */,
 				599BD4A92D6741D800D202AA /* ching.wav */,
 				599BD4A52D66D6F000D202AA /* error.wav */,
 				599BD4A72D673F5800D202AA /* good.wav */,
@@ -424,11 +430,13 @@
 				59B01D5F2BDFC781006779DC /* D.png in Resources */,
 				599BD4982D65F5FE00D202AA /* 02-D.wav in Resources */,
 				59B01D7B2BDFC7EE006779DC /* R.png in Resources */,
+				599BD4AC2D682AA600D202AA /* hereWeGo.wav in Resources */,
 				599BD49E2D65F7F300D202AA /* 05-G.wav in Resources */,
 				59B01D262BD36D7B006779DC /* Actions.sks in Resources */,
 				59B01D592BDFBE16006779DC /* A.png in Resources */,
 				59A0204F2CB8D040008AEB29 /* star.atlas in Resources */,
 				59B01D572BD3A262006779DC /* letterA.png in Resources */,
+				599BD4AE2D6AD3E200D202AA /* woosh.mp3 in Resources */,
 				59B01D672BDFC7A2006779DC /* H.png in Resources */,
 				599BD4A82D673F5800D202AA /* good.wav in Resources */,
 				59B01D832BDFC814006779DC /* V.png in Resources */,

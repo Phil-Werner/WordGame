@@ -47,6 +47,7 @@ class GameScene: SKScene {
     let bNote = SKAction.playSoundFileNamed("07-B.wav", waitForCompletion: false)
     let secondCNote = SKAction.playSoundFileNamed("08-C.wav", waitForCompletion: false)
     let uhoh = SKAction.playSoundFileNamed("error.wav", waitForCompletion: false)
+    let woosh = SKAction.playSoundFileNamed("woosh.mp3", waitForCompletion: false)
     
     var buyVowelButton  = SKShapeNode(rectOf: CGSize(width: 200, height: 80))
     
@@ -1197,7 +1198,7 @@ class GameScene: SKScene {
                   //  print("displayedWord.text = ", displayedWord.text)
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     
                     print ("Selected letter is true or false: ", thisLetterIsSelected(x: 0, y: 0))
                     
@@ -1239,7 +1240,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:0, y:1) && !thisLetterIsSelected(x: 0, y: 1)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[0][1] = true
@@ -1262,7 +1263,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:0, y:2) && !thisLetterIsSelected(x: 0, y: 2)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[0][2] = true
@@ -1285,7 +1286,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:0, y:3) && !thisLetterIsSelected(x: 0, y: 3)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[0][3] = true
@@ -1308,7 +1309,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:0, y:4) && !thisLetterIsSelected(x: 0, y: 4)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[0][4] = true
@@ -1331,7 +1332,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:1, y:0) && !thisLetterIsSelected(x: 1, y: 0)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[1][0] = true
@@ -1354,7 +1355,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:1, y:1) && !thisLetterIsSelected(x: 1, y: 1)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[1][1] = true
@@ -1377,7 +1378,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:1, y:2) && !thisLetterIsSelected(x: 1, y: 2)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[1][2] = true
@@ -1400,7 +1401,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:1, y:3) && !thisLetterIsSelected(x: 1, y: 3)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[1][3] = true
@@ -1423,7 +1424,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:1, y:4) && !thisLetterIsSelected(x: 1, y: 4)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[1][4] = true
@@ -1446,7 +1447,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:2, y:0) && !thisLetterIsSelected(x: 2, y: 0)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[2][0] = true
@@ -1469,7 +1470,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:2, y:1) && !thisLetterIsSelected(x: 2, y: 1)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[2][1] = true
@@ -1492,7 +1493,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:2, y:2) && !thisLetterIsSelected(x: 2, y: 2)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[2][2] = true
@@ -1515,7 +1516,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:2, y:3) && !thisLetterIsSelected(x: 2, y: 3)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[2][3] = true
@@ -1538,7 +1539,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:2, y:4) && !thisLetterIsSelected(x: 2, y: 4)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[2][4] = true
@@ -1561,7 +1562,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:3, y:0) && !thisLetterIsSelected(x: 3, y: 0)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[3][0] = true
@@ -1584,7 +1585,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:3, y:1) && !thisLetterIsSelected(x: 3, y: 1)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[3][1] = true
@@ -1607,7 +1608,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:3, y:2) && !thisLetterIsSelected(x: 3, y: 2)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[3][2] = true
@@ -1630,7 +1631,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:3, y:3) && !thisLetterIsSelected(x: 3, y: 3)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[3][3] = true
@@ -1653,7 +1654,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:3, y:4) && !thisLetterIsSelected(x: 3, y: 4)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[3][4] = true
@@ -1676,7 +1677,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:4, y:0) && !thisLetterIsSelected(x: 4, y: 0)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[4][0] = true
@@ -1699,7 +1700,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:4, y:1) && !thisLetterIsSelected(x: 4, y: 1)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[4][1] = true
@@ -1722,7 +1723,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:4, y:2) && !thisLetterIsSelected(x: 4, y: 2)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[4][2] = true
@@ -1745,7 +1746,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:4, y:3) && !thisLetterIsSelected(x: 4, y: 3)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[4][3] = true
@@ -1768,7 +1769,7 @@ class GameScene: SKScene {
                     playMusicNote()
                 }
                 
-                if (anyLetterSelected) {
+                if (anyLetterSelected && allowGameplay) {
                     if (nearbyLettersAreSelected(x:4, y:4) && !thisLetterIsSelected(x: 4, y: 4)) {
                         clearOldSelectedLetters()
                         arrayOfSelectedLetters[4][4] = true
@@ -2095,6 +2096,8 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Touches ended!")
         
+        allowGameplay = false
+        
         func isNotUsedBefore(word: String) -> Bool {
             
             for usedWord in self.arrayOfUsedWords {
@@ -2127,6 +2130,7 @@ class GameScene: SKScene {
                 self.displayedWord.text = ""
                 self.chosenWord = ""
                 self.clearOldLettersInWord()
+                allowGameplay = true
                 
             })
         }
@@ -2213,6 +2217,7 @@ class GameScene: SKScene {
                                 self.chosenWord = ""
                                 self.arrayOfUsedWords.append(lowerCaseWord)
                                 self.clearOldLettersInWord()
+                                allowGameplay = true
                                 
                             })
                         }
@@ -2228,6 +2233,7 @@ class GameScene: SKScene {
                             self.chosenWord = ""
                             self.arrayOfUsedWords.append(lowerCaseWord)
                             self.clearOldLettersInWord()
+                            allowGameplay = true
                             
                             print("arrayofUsedWords = ", self.arrayOfUsedWords)
                             
@@ -2252,6 +2258,7 @@ class GameScene: SKScene {
                     self.displayedWord.text = ""
                     self.chosenWord = ""
                     self.clearOldLettersInWord()
+                    allowGameplay = true
                     
                 })
                 

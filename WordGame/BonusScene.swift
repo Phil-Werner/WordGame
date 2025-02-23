@@ -9,6 +9,7 @@ import SpriteKit
 
 class BonusScene: SKScene {
     
+    let here = SKAction.playSoundFileNamed("hereWeGo.wav", waitForCompletion: false)
     var startButton = SKShapeNode(rectOf: CGSize(width: 300, height: 100))
     
     override func didMove(to view: SKView) {
@@ -195,6 +196,9 @@ class BonusScene: SKScene {
                 scene.scaleMode = .aspectFill
                // scene.size = (CGSize(width: 10, height: 50))
               //  scene.scaleMode = SKSceneScaleMode.resizeFill
+                
+                run(here)
+                
                 let transition = SKTransition.doorway(withDuration: 2)
                 self.view?.presentScene(scene, transition: transition)
                 
