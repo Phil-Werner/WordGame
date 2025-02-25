@@ -9,6 +9,11 @@ import SpriteKit
 class MenuScene: SKScene {
     //print("got here")
     
+    let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
+    let bonus = SKAction.playSoundFileNamed("bonus.mp3", waitForCompletion: false)
+    let backgroundMusic = SKAction.playSoundFileNamed("background.mp3", waitForCompletion: false)
+    let woosh = SKAction.playSoundFileNamed("woosh.mp3", waitForCompletion: false)
+    
     var startButton = SKShapeNode(rectOf: CGSize(width: 300, height: 100))
     var helpButton = SKShapeNode(rectOf: CGSize(width: 300, height: 100))
     
@@ -28,7 +33,6 @@ class MenuScene: SKScene {
         
        // self.run(SKAction.repeatForever(SKAction.playSoundFileNamed("background.mp3", waitForCompletion: true)))
         
-        let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
         run(soundEffect)
         
         
@@ -76,9 +80,13 @@ class MenuScene: SKScene {
         addChild(secondWord)
         addChild(thirdWord)
         
+        run(woosh)
+        
         
         firstWord.run(actionMove, completion: {
+            self.run(self.woosh)
             secondWord.run(actionMove2, completion: {
+                self.run(self.woosh)
                 thirdWord.run(actionMove3, completion: {
                     
                 })
@@ -127,6 +135,8 @@ class MenuScene: SKScene {
                 print("Start button was pressed")
               //  startButton.fillColor = .red
                 
+                run(bonus)
+                
                 let scene = BonusScene(fileNamed: "BonusScene")!
                 scene.scaleMode = .aspectFill
                // scene.size = (CGSize(width: 10, height: 50))
@@ -135,6 +145,21 @@ class MenuScene: SKScene {
                 self.view?.presentScene(scene, transition: transition)
                 
             }
+            
+            if helpButton.contains(location) {
+                
+                print("Help button was pressed")
+                
+                let scene = HelpScene(fileNamed: "HelpScene")!
+                scene.scaleMode = .aspectFill
+                
+                let transition = SKTransition.doorway(withDuration: 2)
+                self.view?.presentScene(scene, transition: transition)
+                
+                
+                
+            }
+            
         }
     }
 }

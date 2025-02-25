@@ -10,6 +10,7 @@ import SpriteKit
 class BonusScene: SKScene {
     
     let here = SKAction.playSoundFileNamed("hereWeGo.wav", waitForCompletion: false)
+    let woosh = SKAction.playSoundFileNamed("woosh.mp3", waitForCompletion: false)
     var startButton = SKShapeNode(rectOf: CGSize(width: 300, height: 100))
     
     override func didMove(to view: SKView) {
@@ -26,7 +27,9 @@ class BonusScene: SKScene {
         intro.fontSize = 30
         intro.fontColor = SKColor.black
         intro.position = CGPoint(x: 0, y: 450)
+        
         addChild(intro)
+       // run(woosh)
         
         let intro2 = SKLabelNode(fontNamed: "Chalkduster")
         intro2.text = "every time you..."
@@ -34,6 +37,7 @@ class BonusScene: SKScene {
         intro2.fontColor = SKColor.black
         intro2.position = CGPoint(x: -130, y: 400)
         addChild(intro2)
+      //  run(woosh)
         
         self.run(wait, completion: {
             
@@ -44,6 +48,7 @@ class BonusScene: SKScene {
             intro3.fontColor = SKColor.black
             intro3.position = CGPoint(x: -130, y: 300)
             self.addChild(intro3)
+            self.run(self.woosh)
             
         //    bonusLetter = self.selectBonusLetter()
             bonusLetter = "Z"
@@ -56,6 +61,7 @@ class BonusScene: SKScene {
                 intro4.fontColor = SKColor.black
                 intro4.position = CGPoint(x: -50, y: 300)
                 self.addChild(intro4)
+                self.run(self.woosh)
                 
                 self.run(wait2, completion: {
                     
@@ -66,6 +72,7 @@ class BonusScene: SKScene {
                     intro5.position = CGPoint(x: -80, y: 240)
                     
                     self.addChild(intro5)
+                    self.run(self.woosh)
                     
                     self.run(wait2, completion: {
                         
@@ -101,6 +108,7 @@ class BonusScene: SKScene {
                         intro6.position = CGPoint(x: 0, y: 200)
                         
                         self.addChild(intro6)
+                        self.run(self.woosh)
                         
                         self.run(wait2, completion: {
                             
@@ -111,6 +119,7 @@ class BonusScene: SKScene {
                             intro7.position = CGPoint(x: -30, y: 150)
                             
                             self.addChild(intro7)
+                            self.run(self.woosh)
                             
                             self.run(wait2, completion: {
                                 
@@ -138,6 +147,7 @@ class BonusScene: SKScene {
                                 
                                 self.addChild(intro8)
                                 
+                                
                                 let intro9 = SKLabelNode(fontNamed: "Chalkduster")
                                 intro9.text = "letters long!"
                                 intro9.fontSize = 30
@@ -145,6 +155,7 @@ class BonusScene: SKScene {
                                 intro9.position = CGPoint(x: -10, y: 110)
                                 
                                 self.addChild(intro9)
+                                self.run(self.woosh)
                                 
                                 self.run(wait2, completion: {
                                     

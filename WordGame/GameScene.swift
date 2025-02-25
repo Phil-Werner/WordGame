@@ -48,6 +48,7 @@ class GameScene: SKScene {
     let secondCNote = SKAction.playSoundFileNamed("08-C.wav", waitForCompletion: false)
     let uhoh = SKAction.playSoundFileNamed("error.wav", waitForCompletion: false)
     let woosh = SKAction.playSoundFileNamed("woosh.mp3", waitForCompletion: false)
+    let bonus = SKAction.playSoundFileNamed("bonus.mp3", waitForCompletion: false)
     
     var buyVowelButton  = SKShapeNode(rectOf: CGSize(width: 200, height: 80))
     
@@ -917,6 +918,7 @@ class GameScene: SKScene {
             letter3.run(actionMove3)
             letter4.run(actionMove4)
             letter5.run(actionMove5, completion: {
+                self.run(self.soundEffect)
                 self.letter6.position = CGPoint(x: -190, y: 600)
                 self.letter7.position = CGPoint(x: -90, y: 600)
                 self.letter8.position = CGPoint(x: 10, y: 600)
@@ -927,6 +929,7 @@ class GameScene: SKScene {
                 self.letter8.run(actionMove8)
                 self.letter9.run(actionMove9)
                 self.letter10.run(actionMove10, completion: {
+                    self.run(self.soundEffect)
                     self.letter11.position = CGPoint(x: -190, y: 600)
                     self.letter12.position = CGPoint(x: -90, y: 600)
                     self.letter13.position = CGPoint(x: 10, y: 600)
@@ -937,6 +940,7 @@ class GameScene: SKScene {
                     self.letter13.run(actionMove13)
                     self.letter14.run(actionMove14)
                     self.letter15.run(actionMove15, completion: {
+                        self.run(self.soundEffect)
                         self.letter16.position = CGPoint(x: -190, y: 600)
                         self.letter17.position = CGPoint(x: -90, y: 600)
                         self.letter18.position = CGPoint(x: 10, y: 600)
@@ -947,6 +951,7 @@ class GameScene: SKScene {
                         self.letter18.run(actionMove18)
                         self.letter19.run(actionMove19)
                         self.letter20.run(actionMove20, completion: {
+                            self.run(self.soundEffect)
                             self.letter21.position = CGPoint(x: -190, y: 600)
                             self.letter22.position = CGPoint(x: -90, y: 600)
                             self.letter23.position = CGPoint(x: 10, y: 600)
@@ -957,10 +962,12 @@ class GameScene: SKScene {
                             self.letter23.run(actionMove23)
                             self.letter24.run(actionMove24)
                             self.letter25.run(actionMove25, completion: {
+                                self.run(self.soundEffect)
                                 self.timeLeftAsInt = 30
                                 self.timeLeft.text = "30"
                                // self.roundNumber += 1
                                // if (self.roundNumber < 6) {
+                                    allowGameplay = true
                                     beginCountdown()
                                // }
                                 
@@ -974,6 +981,8 @@ class GameScene: SKScene {
         }
         
         func removeLetters() {
+            allowGameplay = false
+            
             let removeLetter1 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
             let removeLetter2 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
             let removeLetter3 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
@@ -996,27 +1005,31 @@ class GameScene: SKScene {
             let removeLetter20 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
             
          */
-         
+            self.run(self.woosh)
             letter1.run(removeLetter1)
             letter2.run(removeLetter2)
             letter3.run(removeLetter3)
             letter4.run(removeLetter4)
             letter5.run(removeLetter5, completion: {
+                self.run(self.woosh)
                 self.letter6.run(removeLetter1)
                 self.letter7.run(removeLetter2)
                 self.letter8.run(removeLetter3)
                 self.letter9.run(removeLetter4)
                 self.letter10.run(removeLetter5, completion: {
+                    self.run(self.woosh)
                     self.letter11.run(removeLetter1)
                     self.letter12.run(removeLetter2)
                     self.letter13.run(removeLetter3)
                     self.letter14.run(removeLetter4)
                     self.letter15.run(removeLetter5, completion: {
+                        self.run(self.woosh)
                         self.letter16.run(removeLetter1)
                         self.letter17.run(removeLetter2)
                         self.letter18.run(removeLetter3)
                         self.letter19.run(removeLetter4)
                         self.letter20.run(removeLetter5, completion: {
+                            self.run(self.woosh)
                             self.letter21.run(removeLetter1)
                             self.letter22.run(removeLetter2)
                             self.letter23.run(removeLetter3)
@@ -2117,9 +2130,10 @@ class GameScene: SKScene {
         
         let wrongWordSequence = SKAction.sequence([wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight,  wrongWordActionMiddle])
         
-        if (chosenWord.count <= 2) {
+        if (chosenWord.count == 2 || chosenWord.count == 1) {
             
-            self.run(self.uhoh)
+            print("XXXXXXXXXXZZZZZZZZZZZYYYYYYYYYYY")
+           self.run(self.uhoh)
 
             displayedWord.run(wrongWordSequence, completion: {
                 
@@ -2135,11 +2149,15 @@ class GameScene: SKScene {
             })
         }
         
+        else {
+            allowGameplay = true
+        }
+        
         let lowerCaseWord = chosenWord.lowercased()
         
-        if (isNotUsedBefore(word: lowerCaseWord)) {
-            print("word was used before")
-        }
+       // if (isNotUsedBefore(word: lowerCaseWord)) {
+       //     print("word was used before")
+      //  }
         
         if (chosenWord.count > 2) {
             print("got here")
@@ -2202,6 +2220,7 @@ class GameScene: SKScene {
                             
                             print("Made it here, check for bonus stars is true")
                             
+                            self.run(self.bonus)
                             self.correctWordString.text = "You got a bonus Star!"
                             self.correctWordString.fontSize = 30
                             self.correctWordString.fontColor = SKColor.black
@@ -2246,8 +2265,11 @@ class GameScene: SKScene {
             }
             
             else {
-                
-                self.run(self.uhoh)
+               // print("BOOoOOOOOOOOOOOOOOOOOM")
+               // print("chosenWord.count = ", chosenWord.count)
+              //  if (chosenWord.count > 0)  {
+                    self.run(self.uhoh)
+               // }
                 
                 displayedWord.run(wrongWordSequence, completion: {
                     

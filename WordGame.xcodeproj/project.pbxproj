@@ -25,6 +25,9 @@
 		599BD4AA2D6741D800D202AA /* ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4A92D6741D800D202AA /* ching.wav */; };
 		599BD4AC2D682AA600D202AA /* hereWeGo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4AB2D682AA600D202AA /* hereWeGo.wav */; };
 		599BD4AE2D6AD3E200D202AA /* woosh.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4AD2D6AD3E200D202AA /* woosh.mp3 */; };
+		599BD4B02D6C200800D202AA /* bonus.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4AF2D6C200800D202AA /* bonus.mp3 */; };
+		599BD4B22D6C2B5300D202AA /* HelpScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599BD4B12D6C2B5300D202AA /* HelpScene.swift */; };
+		599BD4B62D6C2BD300D202AA /* HelpScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 599BD4B52D6C2BD300D202AA /* HelpScene.sks */; };
 		59A0204F2CB8D040008AEB29 /* star.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 59A0204E2CB8D03F008AEB29 /* star.atlas */; };
 		59ACC9F62D571AC800715E9A /* pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 59ACC9F52D571AC800715E9A /* pop.wav */; };
 		59B01D222BD36D7B006779DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B01D212BD36D7B006779DC /* AppDelegate.swift */; };
@@ -105,6 +108,9 @@
 		599BD4A92D6741D800D202AA /* ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ching.wav; sourceTree = "<group>"; };
 		599BD4AB2D682AA600D202AA /* hereWeGo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hereWeGo.wav; sourceTree = "<group>"; };
 		599BD4AD2D6AD3E200D202AA /* woosh.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = woosh.mp3; sourceTree = "<group>"; };
+		599BD4AF2D6C200800D202AA /* bonus.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bonus.mp3; sourceTree = "<group>"; };
+		599BD4B12D6C2B5300D202AA /* HelpScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpScene.swift; sourceTree = "<group>"; };
+		599BD4B52D6C2BD300D202AA /* HelpScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HelpScene.sks; sourceTree = "<group>"; };
 		59A0204E2CB8D03F008AEB29 /* star.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = star.atlas; sourceTree = SOURCE_ROOT; };
 		59ACC9F52D571AC800715E9A /* pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pop.wav; sourceTree = "<group>"; };
 		59B01D1E2BD36D7B006779DC /* WordGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +186,7 @@
 		59ACC9F42D571AC800715E9A /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				599BD4AF2D6C200800D202AA /* bonus.mp3 */,
 				599BD4AD2D6AD3E200D202AA /* woosh.mp3 */,
 				599BD4AB2D682AA600D202AA /* hereWeGo.wav */,
 				599BD4A92D6741D800D202AA /* ching.wav */,
@@ -223,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				59B01D212BD36D7B006779DC /* AppDelegate.swift */,
+				599BD4B52D6C2BD300D202AA /* HelpScene.sks */,
+				599BD4B12D6C2B5300D202AA /* HelpScene.swift */,
 				59B01D232BD36D7B006779DC /* GameScene.sks */,
 				59B01D252BD36D7B006779DC /* Actions.sks */,
 				59B01D272BD36D7B006779DC /* GameScene.swift */,
@@ -409,9 +418,11 @@
 				59B01D5B2BDFC72F006779DC /* B.png in Resources */,
 				599B1B482C48C15B00051B8A /* BonusScene.sks in Resources */,
 				59B01D2F2BD36D7F006779DC /* Assets.xcassets in Resources */,
+				599BD4B62D6C2BD300D202AA /* HelpScene.sks in Resources */,
 				59B01D7F2BDFC7FC006779DC /* T.png in Resources */,
 				59B01D692BDFC7A8006779DC /* I.png in Resources */,
 				59B01D632BDFC791006779DC /* F.png in Resources */,
+				599BD4B02D6C200800D202AA /* bonus.mp3 in Resources */,
 				59B01D752BDFC7D4006779DC /* O.png in Resources */,
 				59D053DC2C25150C00623D7A /* ScoreScene.sks in Resources */,
 				59B01D852BDFC81B006779DC /* W.png in Resources */,
@@ -465,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				599BD4B22D6C2B5300D202AA /* HelpScene.swift in Sources */,
 				599B1B442C48BFB400051B8A /* BonusScene.swift in Sources */,
 				59B01D282BD36D7B006779DC /* GameScene.swift in Sources */,
 				59801F762C10019E005E314D /* MenuScene.swift in Sources */,

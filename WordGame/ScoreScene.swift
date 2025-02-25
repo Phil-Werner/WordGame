@@ -36,7 +36,7 @@ class ScoreScene: SKScene {
             addChild(title)
             
             let wait = SKAction.wait(forDuration: 0.5)
-             let wait2 = SKAction.wait(forDuration: 1)
+            let wait2 = SKAction.wait(forDuration: 1)
             
             run(wait, completion: {
                 
