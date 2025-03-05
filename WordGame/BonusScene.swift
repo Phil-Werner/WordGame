@@ -50,8 +50,8 @@ class BonusScene: SKScene {
             self.addChild(intro3)
             self.run(self.woosh)
             
-        //    bonusLetter = self.selectBonusLetter()
-            bonusLetter = "Z"
+            bonusLetter = self.selectBonusLetter()
+       //     bonusLetter = "Z"
             
             self.run(wait2, completion: {
                 
@@ -76,8 +76,8 @@ class BonusScene: SKScene {
                     
                     self.run(wait2, completion: {
                         
-                       // secondBonusAsInt = self.selectSecondBonus()
-                        secondBonusAsInt = 4
+                        secondBonusAsInt = self.selectSecondBonus()
+                       // secondBonusAsInt = 4
                         
                         print("second bonus as int = ", secondBonusAsInt)
                         

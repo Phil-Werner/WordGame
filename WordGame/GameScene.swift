@@ -813,6 +813,9 @@ class GameScene: SKScene {
                 self.timeLeftAsInt = self.timeLeftAsInt - 1
                 self.timeLeft.text = "\(self.timeLeftAsInt)"
                 if (self.timeLeftAsInt == 0) {
+                    
+                    allowGameplay = false
+                    
                     print("Timer has reached 0")
                     self.roundNumber += 1
                     
@@ -820,7 +823,7 @@ class GameScene: SKScene {
                     
                     if (self.roundNumber > 3) {
                         
-                        print ("round number is higher than 5")
+                        print ("round number is higher than 3")
                         
                       //  music.run(SKAction.stop())
                         
@@ -834,7 +837,38 @@ class GameScene: SKScene {
                     else {
                         
                         print("alaska")
-                        removeLetters()
+                        
+                        if (self.chosenWord.count == 0){
+                            removeLetters()
+                        }
+                        else {
+                            let wrongWordActionLeft = SKAction.move(to: CGPoint(x: -20, y: 0),
+                                                                    duration: TimeInterval(0.05))
+                            let wrongWordActionRight = SKAction.move(to: CGPoint(x: 20, y: 0),
+                                                                     duration: TimeInterval(0.05))
+                            let wrongWordActionMiddle = SKAction.move(to: CGPoint(x: 0, y: 0), duration: TimeInterval(0.05))
+                            
+                            let wrongWordSequence = SKAction.sequence([wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight,  wrongWordActionMiddle])
+                            
+                            self.displayedWord.run(wrongWordSequence, completion: {
+                                
+                                
+                                self.clearOldSelectedLetters()
+                                self.changeLettersToWhite()
+                                self.anyLetterSelected = false
+                                self.displayedWord.text = ""
+                                self.chosenWord = ""
+                                self.clearOldLettersInWord()
+                                
+                                removeLetters()
+                                
+                            })
+                            
+                            
+                            
+                        }
+                        
+                        
 
                     }
                     
@@ -1117,7 +1151,7 @@ class GameScene: SKScene {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        print("array of selected letters in word: ", arrayOfLettersAlreadyInWord)
+      //  print("array of selected letters in word: ", arrayOfLettersAlreadyInWord)
         
         
         func thisLetterIsSelected(x: Int, y: Int) -> Bool {
@@ -2109,167 +2143,44 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("Touches ended!")
         
-        allowGameplay = false
         
-        func isNotUsedBefore(word: String) -> Bool {
+        if (!allowGameplay) {
             
-            for usedWord in self.arrayOfUsedWords {
-                if (usedWord == word) {
-                    return false
-                }
-            }
-        
-            return true
-        }
-        
-        let wrongWordActionLeft = SKAction.move(to: CGPoint(x: -20, y: 0),
-                                         duration: TimeInterval(0.05))
-        let wrongWordActionRight = SKAction.move(to: CGPoint(x: 20, y: 0),
-                                         duration: TimeInterval(0.05))
-        let wrongWordActionMiddle = SKAction.move(to: CGPoint(x: 0, y: 0), duration: TimeInterval(0.05))
-        
-        let wrongWordSequence = SKAction.sequence([wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight,  wrongWordActionMiddle])
-        
-        if (chosenWord.count == 2 || chosenWord.count == 1) {
+            print("MMMMMMMMMMMMMMMMMMMMMMMMMMMM")
             
-            print("XXXXXXXXXXZZZZZZZZZZZYYYYYYYYYYY")
-           self.run(self.uhoh)
-
-            displayedWord.run(wrongWordSequence, completion: {
-                
-                
-                self.clearOldSelectedLetters()
-                self.changeLettersToWhite()
-                self.anyLetterSelected = false
-                self.displayedWord.text = ""
-                self.chosenWord = ""
-                self.clearOldLettersInWord()
-                allowGameplay = true
-                
-            })
         }
         
         else {
-            allowGameplay = true
-        }
-        
-        let lowerCaseWord = chosenWord.lowercased()
-        
-       // if (isNotUsedBefore(word: lowerCaseWord)) {
-       //     print("word was used before")
-      //  }
-        
-        if (chosenWord.count > 2) {
-            print("got here")
-            print("chosenWord = ", chosenWord)
-            print("chosenWord is true or false: ", isReal(word: chosenWord))
             
-           
+            print("allowGameplay = ", allowGameplay)
             
             
-            if (isReal(word: lowerCaseWord) && isNotUsedBefore(word: lowerCaseWord)) {
+            if (chosenWord.count > 0) {
+                allowGameplay = false
+            }
+            func isNotUsedBefore(word: String) -> Bool {
                 
-                print("made it over here")
-                print("chosenWorddd = ", lowerCaseWord)
-                print("chosenWord is true or falseee: ", isReal(word: lowerCaseWord))
+                for usedWord in self.arrayOfUsedWords {
+                    if (usedWord == word) {
+                        return false
+                    }
+                }
                 
-                var tempString = ""
-                
-                var temp = chosenWord.count
-                var temp2 = ("\(temp)")
-                
-                tempString.append(temp2)
-                tempString.append(" letter word!")
-                
-                print("tempString = ", tempString)
-                
-                correctWordString.text = tempString
-                correctWordString.fontSize = 50
-                correctWordString.fontColor = SKColor.black
-                correctWordString.position = CGPoint(x: 0, y: 200)
-                
-                let scaleUpAction = SKAction.scale(to: 1.5, duration: 0.3)
-                let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
-                let actionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction])
-               // let bonusActionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction, scaleDownAction])
-            
-                      
-                run(goodChoice)
-                
-                correctWordString.run(actionSequence, completion: {
-                    
-                    var tmpstrng = ""
-                    
-                    let score = self.calculateScore()
-                    self.scoreAsInt = self.scoreAsInt + score
-                    let tmp = ("\(score)")
-                    
-                    tmpstrng.append(tmp)
-                    tmpstrng.append(" points!")
-                    
-                    self.correctWordString.text = tmpstrng
-                    
-                    self.run(self.goodChoice)
-                    
-                    self.correctWordString.run(actionSequence, completion: {
-                        
-                       // self.checkForBonusStars(word: "apple")
-                       // self.checkForBonusStars(word: "looker")
-                        
-                        if (self.checkForBonusStars(word: lowerCaseWord)) {
-                            
-                            print("Made it here, check for bonus stars is true")
-                            
-                            self.run(self.bonus)
-                            self.correctWordString.text = "You got a bonus Star!"
-                            self.correctWordString.fontSize = 30
-                            self.correctWordString.fontColor = SKColor.black
-                            self.correctWordString.position = CGPoint(x: 0, y: 200)
-                            
-                            self.correctWordString.run(actionSequence, completion: {
-                                self.correctWordString.text = ""
-                                self.currentScore.text = "\(self.scoreAsInt)"
-                                self.clearOldSelectedLetters()
-                                self.changeLettersToWhite()
-                                self.anyLetterSelected = false
-                                self.displayedWord.text = ""
-                                self.chosenWord = ""
-                                self.arrayOfUsedWords.append(lowerCaseWord)
-                                self.clearOldLettersInWord()
-                                allowGameplay = true
-                                
-                            })
-                        }
-                        
-                        else {
-                            
-                            self.correctWordString.text = ""
-                            self.currentScore.text = "\(self.scoreAsInt)"
-                            self.clearOldSelectedLetters()
-                            self.changeLettersToWhite()
-                            self.anyLetterSelected = false
-                            self.displayedWord.text = ""
-                            self.chosenWord = ""
-                            self.arrayOfUsedWords.append(lowerCaseWord)
-                            self.clearOldLettersInWord()
-                            allowGameplay = true
-                            
-                            print("arrayofUsedWords = ", self.arrayOfUsedWords)
-                            
-                        }
-                    })
-                })
-                
-      //          addChild(correctWordString)
-             
+                return true
             }
             
-            else {
-               // print("BOOoOOOOOOOOOOOOOOOOOM")
-               // print("chosenWord.count = ", chosenWord.count)
-              //  if (chosenWord.count > 0)  {
-                    self.run(self.uhoh)
-               // }
+            let wrongWordActionLeft = SKAction.move(to: CGPoint(x: -20, y: 0),
+                                                    duration: TimeInterval(0.05))
+            let wrongWordActionRight = SKAction.move(to: CGPoint(x: 20, y: 0),
+                                                     duration: TimeInterval(0.05))
+            let wrongWordActionMiddle = SKAction.move(to: CGPoint(x: 0, y: 0), duration: TimeInterval(0.05))
+            
+            let wrongWordSequence = SKAction.sequence([wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight, wrongWordActionLeft, wrongWordActionRight,  wrongWordActionMiddle])
+            
+            if (chosenWord.count == 2 || chosenWord.count == 1) {
+                
+                print("XXXXXXXXXXZZZZZZZZZZZYYYYYYYYYYY")
+                self.run(self.uhoh)
                 
                 displayedWord.run(wrongWordSequence, completion: {
                     
@@ -2283,11 +2194,149 @@ class GameScene: SKScene {
                     allowGameplay = true
                     
                 })
-                
-           
-                
-                
             }
+            
+           // else {
+           //     allowGameplay = true
+          //  }
+            
+            let lowerCaseWord = chosenWord.lowercased()
+            
+            // if (isNotUsedBefore(word: lowerCaseWord)) {
+            //     print("word was used before")
+            //  }
+            
+            if (chosenWord.count > 2) {
+                print("got here")
+                print("chosenWord = ", chosenWord)
+                print("chosenWord is true or false: ", isReal(word: chosenWord))
+                
+                
+                
+                
+                if (isReal(word: lowerCaseWord) && isNotUsedBefore(word: lowerCaseWord)) {
+                    
+                    print("made it over here")
+                    print("chosenWorddd = ", lowerCaseWord)
+                    print("chosenWord is true or falseee: ", isReal(word: lowerCaseWord))
+                    
+                    var tempString = ""
+                    
+                    var temp = chosenWord.count
+                    var temp2 = ("\(temp)")
+                    
+                    tempString.append(temp2)
+                    tempString.append(" letter word!")
+                    
+                    print("tempString = ", tempString)
+                    
+                    correctWordString.text = tempString
+                    correctWordString.fontSize = 50
+                    correctWordString.fontColor = SKColor.black
+                    correctWordString.position = CGPoint(x: 0, y: 200)
+                    
+                    let scaleUpAction = SKAction.scale(to: 1.5, duration: 0.3)
+                    let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
+                    let actionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction])
+                    // let bonusActionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction, scaleDownAction])
+                    
+                    
+                    run(goodChoice)
+                    
+                    correctWordString.run(actionSequence, completion: {
+                        
+                        var tmpstrng = ""
+                        
+                        let score = self.calculateScore()
+                        self.scoreAsInt = self.scoreAsInt + score
+                        let tmp = ("\(score)")
+                        
+                        tmpstrng.append(tmp)
+                        tmpstrng.append(" points!")
+                        
+                        self.correctWordString.text = tmpstrng
+                        
+                        self.run(self.goodChoice)
+                        
+                        self.correctWordString.run(actionSequence, completion: {
+                            
+                            // self.checkForBonusStars(word: "apple")
+                            // self.checkForBonusStars(word: "looker")
+                            
+                            if (self.checkForBonusStars(word: lowerCaseWord)) {
+                                
+                                print("Made it here, check for bonus stars is true")
+                                
+                                self.run(self.bonus)
+                                self.correctWordString.text = "You got a bonus Star!"
+                                self.correctWordString.fontSize = 30
+                                self.correctWordString.fontColor = SKColor.black
+                                self.correctWordString.position = CGPoint(x: 0, y: 200)
+                                
+                                self.correctWordString.run(actionSequence, completion: {
+                                    self.correctWordString.text = ""
+                                    self.currentScore.text = "\(self.scoreAsInt)"
+                                    self.clearOldSelectedLetters()
+                                    self.changeLettersToWhite()
+                                    self.anyLetterSelected = false
+                                    self.displayedWord.text = ""
+                                    self.chosenWord = ""
+                                    self.arrayOfUsedWords.append(lowerCaseWord)
+                                    self.clearOldLettersInWord()
+                                    allowGameplay = true
+                                    
+                                })
+                            }
+                            
+                            else {
+                                
+                                self.correctWordString.text = ""
+                                self.currentScore.text = "\(self.scoreAsInt)"
+                                self.clearOldSelectedLetters()
+                                self.changeLettersToWhite()
+                                self.anyLetterSelected = false
+                                self.displayedWord.text = ""
+                                self.chosenWord = ""
+                                self.arrayOfUsedWords.append(lowerCaseWord)
+                                self.clearOldLettersInWord()
+                                allowGameplay = true
+                                
+                                print("arrayofUsedWords = ", self.arrayOfUsedWords)
+                                
+                            }
+                        })
+                    })
+                    
+                    //          addChild(correctWordString)
+                    
+                }
+                
+                else {
+                    // print("BOOoOOOOOOOOOOOOOOOOOM")
+                    // print("chosenWord.count = ", chosenWord.count)
+                    //  if (chosenWord.count > 0)  {
+                    self.run(self.uhoh)
+                    // }
+                    
+                    displayedWord.run(wrongWordSequence, completion: {
+                        
+                        
+                        self.clearOldSelectedLetters()
+                        self.changeLettersToWhite()
+                        self.anyLetterSelected = false
+                        self.displayedWord.text = ""
+                        self.chosenWord = ""
+                        self.clearOldLettersInWord()
+                        allowGameplay = true
+                        
+                    })
+                    
+                    
+                    
+                    
+                }
+            }
+            
         }
     }
     
@@ -2360,6 +2409,8 @@ class GameScene: SKScene {
                 
                 if awaitingLetterReplacement {
                     
+                    awaitingLetterReplacement = false
+                    
                     print("Letter 1 was pressed and should be replaced with a vowel")
                     let removeLetter1 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
                     
@@ -2377,7 +2428,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             
                             
                             //
@@ -2391,6 +2442,8 @@ class GameScene: SKScene {
             if letter2.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 2 was pressed and should be replaced with a vowel")
                     let removeLetter2 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
@@ -2409,7 +2462,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             
                             
                             
@@ -2424,6 +2477,8 @@ class GameScene: SKScene {
             if letter3.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 3 was pressed and should be replaced with a vowel")
                     let removeLetter3 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
@@ -2442,7 +2497,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             
                             
                             
@@ -2460,6 +2515,7 @@ class GameScene: SKScene {
                 
                 if awaitingLetterReplacement {
                     
+                    awaitingLetterReplacement = false
                     print("Letter 4 was pressed and should be replaced with a vowel")
                     let removeLetter4 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
                     
@@ -2477,7 +2533,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             
                             
                             
@@ -2493,6 +2549,7 @@ class GameScene: SKScene {
             if letter5.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    awaitingLetterReplacement = false
                     
                     print("Letter 5 was pressed and should be replaced with a vowel")
                     let removeLetter5 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
@@ -2511,7 +2568,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             
                             
                             
@@ -2526,6 +2583,7 @@ class GameScene: SKScene {
             if letter6.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    awaitingLetterReplacement = false
                     
                     print("Letter 6 was pressed and should be replaced with a vowel")
                     let removeLetter6 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
@@ -2544,7 +2602,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             
                             
                             
@@ -2561,6 +2619,8 @@ class GameScene: SKScene {
             if letter7.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 7 was pressed and should be replaced with a vowel")
                     let removeLetter7 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
@@ -2579,7 +2639,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             
                             
                             
@@ -2595,6 +2655,8 @@ class GameScene: SKScene {
             if letter8.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 8 was pressed and should be replaced with a vowel")
                     let removeLetter8 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
@@ -2613,7 +2675,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -2625,6 +2687,8 @@ class GameScene: SKScene {
             if letter9.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 9 was pressed and should be replaced with a vowel")
                     let removeLetter9 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
@@ -2643,7 +2707,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -2656,6 +2720,8 @@ class GameScene: SKScene {
             if letter10.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 10 was pressed and should be replaced with a vowel")
                     let removeLetter10 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
@@ -2674,7 +2740,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                           
                             //
                         })
                     })
@@ -2685,6 +2751,8 @@ class GameScene: SKScene {
             if letter11.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 11 was pressed and should be replaced with a vowel")
                     let removeLetter11 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
@@ -2703,7 +2771,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -2717,6 +2785,8 @@ class GameScene: SKScene {
             if letter12.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 12 was pressed and should be replaced with a vowel")
                     let removeLetter12 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
@@ -2735,7 +2805,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                           
                             //
                         })
                     })
@@ -2746,6 +2816,8 @@ class GameScene: SKScene {
             if letter13.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 13 was pressed and should be replaced with a vowel")
                     let removeLetter13 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
@@ -2764,7 +2836,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                           
                             //
                         })
                     })
@@ -2774,6 +2846,8 @@ class GameScene: SKScene {
             if letter14.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 14 was pressed and should be replaced with a vowel")
                     let removeLetter14 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
@@ -2792,7 +2866,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -2804,6 +2878,8 @@ class GameScene: SKScene {
             if letter15.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 15 was pressed and should be replaced with a vowel")
                     let removeLetter15 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
@@ -2822,7 +2898,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -2832,6 +2908,8 @@ class GameScene: SKScene {
             if letter16.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 16 was pressed and should be replaced with a vowel")
                     let removeLetter16 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
@@ -2850,7 +2928,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -2860,6 +2938,8 @@ class GameScene: SKScene {
             if letter17.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 17 was pressed and should be replaced with a vowel")
                     let removeLetter17 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
@@ -2878,7 +2958,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -2889,6 +2969,8 @@ class GameScene: SKScene {
             if letter18.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 18 was pressed and should be replaced with a vowel")
                     let removeLetter18 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
@@ -2907,7 +2989,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -2919,6 +3001,8 @@ class GameScene: SKScene {
             if letter19.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 19 was pressed and should be replaced with a vowel")
                     let removeLetter19 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
@@ -2937,7 +3021,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                           
                             //
                         })
                     })
@@ -2948,6 +3032,8 @@ class GameScene: SKScene {
             if letter20.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 20 was pressed and should be replaced with a vowel")
                     let removeLetter20 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
@@ -2966,7 +3052,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                           
                             //
                         })
                     })
@@ -2976,6 +3062,8 @@ class GameScene: SKScene {
             if letter21.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 21 was pressed and should be replaced with a vowel")
                     let removeLetter21 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
@@ -2994,7 +3082,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -3005,6 +3093,8 @@ class GameScene: SKScene {
             if letter22.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 22 was pressed and should be replaced with a vowel")
                     let removeLetter22 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
@@ -3023,7 +3113,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -3034,6 +3124,8 @@ class GameScene: SKScene {
             if letter23.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 23 was pressed and should be replaced with a vowel")
                     let removeLetter23 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
@@ -3052,8 +3144,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
-                            //
+                            
                         })
                     })
                 }
@@ -3063,6 +3154,8 @@ class GameScene: SKScene {
             if letter24.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 24 was pressed and should be replaced with a vowel")
                     let removeLetter24 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
@@ -3081,7 +3174,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
+                            
                             //
                         })
                     })
@@ -3092,6 +3185,8 @@ class GameScene: SKScene {
             if letter25.contains(location) {
                 
                 if awaitingLetterReplacement {
+                    
+                    awaitingLetterReplacement = false
                     
                     print("Letter 25 was pressed and should be replaced with a vowel")
                     let removeLetter25 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
@@ -3110,8 +3205,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                            awaitingLetterReplacement = false
-                            //
+                            
                         })
                     })
                 }
