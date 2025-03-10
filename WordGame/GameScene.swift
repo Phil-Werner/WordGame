@@ -8,12 +8,6 @@
 import SpriteKit
 import GameplayKit
 
-struct Square {
-    let letter: String
-    let isSelected: Bool
-    let color: UIColor
-}
-
 var highScore = 0
 var finalScore = 0
 var numThreeLetterWords = 0
@@ -34,7 +28,6 @@ var awaitingLetterReplacement = false
 
 class GameScene: SKScene {
     
-    //let soundEffect = SKAudioNode(fileNamed: "pop.wav")
     
     let goodChoice = SKAction.playSoundFileNamed("good.wav", waitForCompletion: false)
     let soundEffect = SKAction.playSoundFileNamed("pop.wav", waitForCompletion: false)
@@ -89,7 +82,7 @@ class GameScene: SKScene {
     }
     
     func changeLettersToWhite() {
-//        letters.forEach { $0.color = .white }
+
         letter1.color = .white
         letter2.color = .white
         letter3.color = .white
@@ -118,7 +111,6 @@ class GameScene: SKScene {
     }
     
     let displayedWord = SKLabelNode(fontNamed: "Chalkduster")
-   // let correctWordString = SKLabelNode(fontNamed: "Chalkduster")
     let correctWordString = SKLabelNode(fontNamed: "Chalkduster")
     let currentScore = SKLabelNode(fontNamed: "Chalkduster")
     let timeLeft = SKLabelNode(fontNamed: "ArialMT")
@@ -176,18 +168,10 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = .red
         
-      //  let music = SKAudioNode(fileNamed: "background.mp3")
-      //  addChild(music)
-        
-//        self.run(SKAction.repeatForever(SKAction.playSoundFileNamed("background.mp3", waitForCompletion: true)))
-        
-      //  run(cNote)
-        
         buildStar()
         animateStar()
         
-      //  physicsWorld.gravity = CGVector(dx: 0, dy: -1.62)
-        
+     
     
       func buildStar() {
           let starAnimatedAtlas = SKTextureAtlas(named: "star")
@@ -196,7 +180,7 @@ class GameScene: SKScene {
           let numImages = starAnimatedAtlas.textureNames.count
           for i in 1..<numImages {
               let starTextureName = "star\(i)"
-             // print("starTextureName = ", starTextureName)
+             
               starFrames.append(starAnimatedAtlas.textureNamed(starTextureName))
           }
           starRunningFrames = starFrames
@@ -207,8 +191,6 @@ class GameScene: SKScene {
           star.setScale(0.4)
           star.position = CGPoint(x: -225, y: 550)
           addChild(star)
-          
-     //     star.physicsBody = SKPhysicsBody(rectangleOf: star.size)
           
       }
       
@@ -265,11 +247,7 @@ class GameScene: SKScene {
         addChild(currentScore)
         addChild(timeLeft)
         addChild(numBonusStarsLabel)
-    //    addChild(music)
-       // addChild(soundEffect)
-        
-        //arrayOfLetters[0][0] = "A"
-        
+
         print("arrayOfLetters: ", arrayOfLetters)
         
         for i in 0...4 {
@@ -277,65 +255,10 @@ class GameScene: SKScene {
                 arrayOfLetters[i][j] = pickLetter()
             }
         }
-//
-   //     arrayOfLetters[0][0] = "Z"
-  //      arrayOfLetters[0][1] = "I"
- //       arrayOfLetters[0][2] = "P"
- //       arrayOfLetters[0][3] = "S"
- //       arrayOfLetters[0][4] = "K"
-//        arrayOfLetters[1][0] = pickLetter()
-//        arrayOfLetters[1][1] = pickLetter()
-//        arrayOfLetters[1][2] = pickLetter()
-//        arrayOfLetters[1][3] = pickLetter()
-//        arrayOfLetters[1][4] = pickLetter()
-//        arrayOfLetters[2][0] = pickLetter()
-//        arrayOfLetters[2][1] = pickLetter()
-//        arrayOfLetters[2][2] = pickLetter()
-//        arrayOfLetters[2][3] = pickLetter()
-//        arrayOfLetters[2][4] = pickLetter()
-//        arrayOfLetters[3][0] = pickLetter()
-//        arrayOfLetters[3][1] = pickLetter()
-//        arrayOfLetters[3][2] = pickLetter()
-//        arrayOfLetters[3][3] = pickLetter()
-//        arrayOfLetters[3][4] = pickLetter()
-//        arrayOfLetters[4][0] = pickLetter()
-//        arrayOfLetters[4][1] = pickLetter()
-//        arrayOfLetters[4][2] = pickLetter()
-//        arrayOfLetters[4][3] = pickLetter()
-//        arrayOfLetters[4][4] = pickLetter()
-//
+
    
         
         print("arrayOfLettersRedux: ", arrayOfLetters)
-        
-    /*    let textureA = SKTexture(imageNamed: "A")
-        let textureB = SKTexture(imageNamed: "B")
-        let textureC = SKTexture(imageNamed: "C")
-        let textureD = SKTexture(imageNamed: "D")
-        let textureE = SKTexture(imageNamed: "E")
-        let textureF = SKTexture(imageNamed: "F")
-        let textureG = SKTexture(imageNamed: "G")
-        let textureH = SKTexture(imageNamed: "H")
-        let textureI = SKTexture(imageNamed: "I")
-        let textureJ = SKTexture(imageNamed: "J")
-        let textureK = SKTexture(imageNamed: "K")
-        let textureL = SKTexture(imageNamed: "L")
-        let textureM = SKTexture(imageNamed: "M")
-        let textureN = SKTexture(imageNamed: "N")
-        let textureO = SKTexture(imageNamed: "O")
-        let textureP = SKTexture(imageNamed: "P")
-        let textureQ = SKTexture(imageNamed: "Q")
-        let textureR = SKTexture(imageNamed: "R")
-        let textureS = SKTexture(imageNamed: "S")
-        let textureT = SKTexture(imageNamed: "T")
-        let textureU = SKTexture(imageNamed: "U")
-        let textureV = SKTexture(imageNamed: "V")
-        let textureW = SKTexture(imageNamed: "W")
-        let textureX = SKTexture(imageNamed: "X")
-        let textureY = SKTexture(imageNamed: "Y")
-        let textureZ = SKTexture(imageNamed: "Z")
-        
-     */
      
      
         self.letter1.texture = SKTexture(imageNamed: arrayOfLetters[0][0])
@@ -364,57 +287,13 @@ class GameScene: SKScene {
         self.letter24.texture = SKTexture(imageNamed: arrayOfLetters[4][3])
         self.letter25.texture = SKTexture(imageNamed: arrayOfLetters[4][4])
         
-      //  print("pickedLetter = ", pickLetter())
-      
-     //   print("pick = ", pick)
-        
-   /*     let sprites = [SKSpriteNode]()
-        for i in 0...20 {
-            sprites.append(SKSpriteNode(name: "sprite/($0)"))
-        }
-        
-     */
 
-        
-      //  let letter1 = SKSpriteNode(imageNamed: arrayOfLetters[0][0])
         letter1.position = CGPoint(x: -190, y: 600)
         addChild(letter1)
         
-      //  letter1.colorBlendFactor = 0.5
-       // letter1.color = .white
-        
-        //letter1.color = .green
-    //    var letterImage = "A"
-        
         print("arrayOfLetters01 = ", arrayOfLetters[0][1])
-        
- /*       let letter2 = SKSpriteNode(imageNamed: arrayOfLetters[0][1])
-        let letter3 = SKSpriteNode(imageNamed: arrayOfLetters[0][2])
-        let letter4 = SKSpriteNode(imageNamed: arrayOfLetters[0][3])
-        let letter5 = SKSpriteNode(imageNamed: arrayOfLetters[0][4])
-        let letter6 = SKSpriteNode(imageNamed: arrayOfLetters[1][0])
-        let letter7 = SKSpriteNode(imageNamed: arrayOfLetters[1][1])
-        let letter8 = SKSpriteNode(imageNamed: arrayOfLetters[1][2])
-        let letter9 = SKSpriteNode(imageNamed: arrayOfLetters[1][3])
-        let letter10 = SKSpriteNode(imageNamed: arrayOfLetters[1][4])
-        let letter11 = SKSpriteNode(imageNamed: arrayOfLetters[2][0])
-        let letter12 = SKSpriteNode(imageNamed: arrayOfLetters[2][1])
-        let letter13 = SKSpriteNode(imageNamed: arrayOfLetters[2][2])
-        let letter14 = SKSpriteNode(imageNamed: arrayOfLetters[2][3])
-        let letter15 = SKSpriteNode(imageNamed: arrayOfLetters[2][4])
-        let letter16 = SKSpriteNode(imageNamed: arrayOfLetters[3][0])
-        let letter17 = SKSpriteNode(imageNamed: arrayOfLetters[3][1])
-        let letter18 = SKSpriteNode(imageNamed: arrayOfLetters[3][2])
-        let letter19 = SKSpriteNode(imageNamed: arrayOfLetters[3][3])
-        let letter20 = SKSpriteNode(imageNamed: arrayOfLetters[3][4])
-        let letter21 = SKSpriteNode(imageNamed: arrayOfLetters[4][0])
-        let letter22 = SKSpriteNode(imageNamed: arrayOfLetters[4][1])
-        let letter23 = SKSpriteNode(imageNamed: arrayOfLetters[4][2])
-        let letter24 = SKSpriteNode(imageNamed: arrayOfLetters[4][3])
-        let letter25 = SKSpriteNode(imageNamed: arrayOfLetters[4][4])
-  
-  */
-        
+     
+    
         letter1.colorBlendFactor = 0.5
         letter2.colorBlendFactor = 0.5
         letter3.colorBlendFactor = 0.5
@@ -523,18 +402,16 @@ class GameScene: SKScene {
         
         
         letter1.run(actionMove, completion: {
-    //        self.run(self.soundEffect)
+    
             moveLetter2()
         })
         
         func moveLetter2() {
-          //  let letter2 = SKSpriteNode(imageNamed: "letterA")
+     
             letter2.position = CGPoint(x: -90, y: 600)
             addChild(letter2)
             
-       //     let actionMove2 = SKAction.move(to: CGPoint(x: -90, y: -500),
-        //                                    duration: TimeInterval(0.25)
-        //    )
+     
             self.run(self.soundEffect)
             letter2.run(actionMove2, completion: {
                 moveLetter3()
@@ -543,7 +420,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter3() {
-            //let letter3 = SKSpriteNode(imageNamed: "letterA")
+           
             letter3.position = CGPoint(x: 10, y: 600)
             addChild(letter3)
             
@@ -554,7 +431,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter4() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter4.position = CGPoint(x: 110, y: 600)
             addChild(letter4)
             
@@ -565,7 +442,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter5() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter5.position = CGPoint(x: 210, y: 600)
             addChild(letter5)
             
@@ -576,7 +453,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter6() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+            
             letter6.position = CGPoint(x: -190, y: 600)
             addChild(letter6)
             
@@ -587,7 +464,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter7() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter7.position = CGPoint(x: -90, y: 600)
             addChild(letter7)
             
@@ -598,7 +475,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter8() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter8.position = CGPoint(x: 10, y: 600)
             addChild(letter8)
             
@@ -609,7 +486,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter9() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+            
             letter9.position = CGPoint(x: 110, y: 600)
             addChild(letter9)
             
@@ -620,7 +497,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter10() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter10.position = CGPoint(x: 210, y: 600)
             addChild(letter10)
             
@@ -631,7 +508,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter11() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter11.position = CGPoint(x: -190, y: 600)
             addChild(letter11)
             
@@ -642,7 +519,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter12() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter12.position = CGPoint(x: -90, y: 600)
             addChild(letter12)
             
@@ -653,7 +530,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter13() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter13.position = CGPoint(x: 10, y: 600)
             addChild(letter13)
             
@@ -664,7 +541,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter14() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter14.position = CGPoint(x: 110, y: 600)
             addChild(letter14)
             
@@ -675,7 +552,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter15() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter15.position = CGPoint(x: 210, y: 600)
             addChild(letter15)
             
@@ -686,7 +563,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter16() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter16.position = CGPoint(x: -190, y: 600)
             addChild(letter16)
             
@@ -697,7 +574,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter17() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+            
             letter17.position = CGPoint(x: -90, y: 600)
             addChild(letter17)
             
@@ -708,7 +585,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter18() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter18.position = CGPoint(x: 10, y: 600)
             addChild(letter18)
             
@@ -719,7 +596,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter19() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+            
             letter19.position = CGPoint(x: 110, y: 600)
             addChild(letter19)
             
@@ -730,7 +607,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter20() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter20.position = CGPoint(x: 210, y: 600)
             addChild(letter20)
             
@@ -741,7 +618,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter21() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter21.position = CGPoint(x: -190, y: 600)
             addChild(letter21)
             
@@ -752,7 +629,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter22() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+            
             letter22.position = CGPoint(x: -90, y: 600)
             addChild(letter22)
             
@@ -763,7 +640,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter23() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter23.position = CGPoint(x: 10, y: 600)
             addChild(letter23)
             
@@ -774,7 +651,7 @@ class GameScene: SKScene {
         }
         
         func moveLetter24() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+           
             letter24.position = CGPoint(x: 110, y: 600)
             addChild(letter24)
             
@@ -785,25 +662,19 @@ class GameScene: SKScene {
         }
         
         func moveLetter25() {
-            //let letter4 = SKSpriteNode(imageNamed: "letterA")
+          
             letter25.position = CGPoint(x: 210, y: 600)
             addChild(letter25)
             
             self.run(self.soundEffect)
             letter25.run(actionMove25, completion: {
-             //   let textureA = SKTexture(imageNamed: "A")
-            //    self.letter1.texture = textureA
-                
-             //   let wait = SKAction.wait(forDuration: 1)
-               // self.timeLeft.run(wait, completion: {
-                 //   self.timeLeftAsInt = self.timeLeftAsInt - 1
-                   // self.timeLeft.text = "\(self.timeLeftAsInt)"
+             
                 
                 self.run(self.soundEffect)
                 allowGameplay = true
                 beginCountdown()
                     
-              //  })
+              
             })
         }
         
@@ -825,18 +696,16 @@ class GameScene: SKScene {
                         
                         print ("round number is higher than 3")
                         
-                      //  music.run(SKAction.stop())
+                     
                         
                         let scoreScene = ScoreScene(fileNamed: "ScoreScene")!
                         scoreScene.scaleMode = .aspectFill
-                       // scene.size = (CGSize(width: 10, height: 50))
-                      //  scene.scaleMode = SKSceneScaleMode.resizeFill
+                    
                         let transition = SKTransition.doorway(withDuration: 2)
                         self.view?.presentScene(scoreScene, transition: transition)
                     }
                     else {
                         
-                        print("alaska")
                         
                         if (self.chosenWord.count == 0){
                             removeLetters()
@@ -871,13 +740,7 @@ class GameScene: SKScene {
                         
 
                     }
-                    
-                    
-                    
-                    
-                    
-                   
-                 //   replaceLetters()
+                
                 }
                 else {
                     beginCountdown()
@@ -999,11 +862,10 @@ class GameScene: SKScene {
                                 self.run(self.soundEffect)
                                 self.timeLeftAsInt = 30
                                 self.timeLeft.text = "30"
-                               // self.roundNumber += 1
-                               // if (self.roundNumber < 6) {
+                            
                                     allowGameplay = true
                                     beginCountdown()
-                               // }
+                               
                                 
                             })
                         })
@@ -1022,23 +884,7 @@ class GameScene: SKScene {
             let removeLetter3 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
             let removeLetter4 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
             let removeLetter5 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
-        /*    let removeLetter6 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
-            let removeLetter7 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
-            let removeLetter8 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
-            let removeLetter9 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
-            let removeLetter10 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
-            let removeLetter11 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
-            let removeLetter12 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
-            let removeLetter13 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
-            let removeLetter14 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
-            let removeLetter15 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
-            let removeLetter16 = SKAction.move(to: CGPoint(x: -190, y: -800), duration: TimeInterval(0.25))
-            let removeLetter17 = SKAction.move(to: CGPoint(x: -90, y: -800), duration: TimeInterval(0.25))
-            let removeLetter18 = SKAction.move(to: CGPoint(x: 10, y: -800), duration: TimeInterval(0.25))
-            let removeLetter19 = SKAction.move(to: CGPoint(x: 110, y: -800), duration: TimeInterval(0.25))
-            let removeLetter20 = SKAction.move(to: CGPoint(x: 210, y: -800), duration: TimeInterval(0.25))
-            
-         */
+    
             self.run(self.woosh)
             letter1.run(removeLetter1)
             letter2.run(removeLetter2)
@@ -1080,24 +926,6 @@ class GameScene: SKScene {
                 })
             })
         }
-      //  letter4.color = .white
-        
-       /* let letter2 = SKSpriteNode(imageNamed: "letterA")
-        letter2.position = CGPoint(x: -80, y: 600)
-        addChild(letter2)
-        
-        let actionMove2 = SKAction.move(to: CGPoint(x: -80, y: -500),
-                                        duration: TimeInterval(1)
-        )
-        letter2.run(actionMove2)
-        
-        */
-        
-
-        
-        print(isReal(word:"kdlylxibokrmmacfnscvxc"))
-        
-
         
     }
     
@@ -1118,7 +946,6 @@ class GameScene: SKScene {
         
         print ("function play music note was called")
         print ("chosenword dot count = ", chosenWord.count)
-        //run(cNote)
         
         if (chosenWord.count == 1) {
             run(cNote)
@@ -1156,12 +983,8 @@ class GameScene: SKScene {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-      //  print("array of selected letters in word: ", arrayOfLettersAlreadyInWord)
-        
         
         func thisLetterIsSelected(x: Int, y: Int) -> Bool {
-            
-            print("blahblbah")
          
             if (arrayOfLettersAlreadyInWord[x][y] == true) {
                 return true
@@ -1265,18 +1088,9 @@ class GameScene: SKScene {
                         chosenWord.append(arrayOfLetters[0][0])
                         print("chosenWord = ", chosenWord)
                         
-                        print("HEEEELLLLLLLOOOOOOO")
-                        
-                        //run(cNote)
-                        
                         displayedWord.text = chosenWord
                         playMusicNote()
                         
-                  /*      let scaleUpAction = SKAction.scale(to: 2, duration: 0.3)
-                        let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
-                        let actionSequence = SKAction.sequence([scaleUpAction, scaleDownAction])
-                        */
-                    //    displayedWord.run(actionSequence)
                         
                     }
                 }
@@ -1915,25 +1729,12 @@ class GameScene: SKScene {
             //double consanant
             
             print ("second bonus starting letter: ", word[word.startIndex])
-            
-           // if ["a","e", "i", "o", "u"].contains(word[word.startIndex]) {
-                
-           // }
-            
-          //  else {
-                
-           //     print ("The first letter is a consonant")
-                
-                //    if [word[word.startIndex]].contains(word[word.startIndex, offsetBy: 1]) {
-                
-                //     print ("xxxx ", word[word.startIndex, offsetBy: 1])
+
                 
                 let amnt = 0...word.count-1
                 
                 for num in amnt {
                     
-               //     let newindex = word.index(word.startIndex, offsetBy: 1)
-                //    print("DDDDDDDD ", word[newindex])
                     
                     print("word index = ", word.index(word.startIndex, offsetBy: 1))
                  
@@ -1969,32 +1770,6 @@ class GameScene: SKScene {
                         
                     }
                     
-                    
-                    
-                    
-                    
-              //  }
-                
-                
-                
-             /*   let char1 = word[word.startIndex]
-                let char2 = word[index]
-                
-                print ("char1 = ", char1)
-                print ("char2 = ", char2)
-                
-                if ( char1 == char2) {
-                    
-                    print ("the first two letter are the same")
-                    
-                }
-                
-                else {
-                    
-                    print ("the first two letters are not the same")
-                }
-              
-              */
             }
             
         }
@@ -2025,9 +1800,6 @@ class GameScene: SKScene {
             let amnt = 0...word.count-1
             
             for num in amnt {
-                
-                //     let newindex = word.index(word.startIndex, offsetBy: 1)
-                //    print("DDDDDDDD ", word[newindex])
                 
                 print("word index = ", word.index(word.startIndex, offsetBy: 1))
                 
@@ -2096,9 +1868,12 @@ class GameScene: SKScene {
                 output = true
                 
             }
+        }
             
             if (thirdBonusAsInt == 0) {
                 //bonus star for word 5 letters long
+                
+                print("XXXXXXXXXX word count is", word.count)
                 
                 if (word.count == 5) {
                     print("this word is five letters and the bonus star word length is too")
@@ -2135,10 +1910,6 @@ class GameScene: SKScene {
                 }
                 
             }
-            
-            
-            
-        }
         
     return output
         
@@ -2150,8 +1921,6 @@ class GameScene: SKScene {
         
         
         if (!allowGameplay) {
-            
-            print("MMMMMMMMMMMMMMMMMMMMMMMMMMMM")
             
         }
         
@@ -2200,16 +1969,10 @@ class GameScene: SKScene {
                     
                 })
             }
-            
-           // else {
-           //     allowGameplay = true
-          //  }
+        
             
             let lowerCaseWord = chosenWord.lowercased()
-            
-            // if (isNotUsedBefore(word: lowerCaseWord)) {
-            //     print("word was used before")
-            //  }
+        
             
             if (chosenWord.count > 2) {
                 print("got here")
@@ -2312,16 +2075,11 @@ class GameScene: SKScene {
                         })
                     })
                     
-                    //          addChild(correctWordString)
-                    
                 }
                 
                 else {
-                    // print("BOOoOOOOOOOOOOOOOOOOOM")
-                    // print("chosenWord.count = ", chosenWord.count)
-                    //  if (chosenWord.count > 0)  {
+                    
                     self.run(self.uhoh)
-                    // }
                     
                     displayedWord.run(wrongWordSequence, completion: {
                         
@@ -2400,14 +2158,7 @@ class GameScene: SKScene {
                     })
                     
                 }
-                
-              //  let scene = BonusScene(fileNamed: "BonusScene")!
-              //  scene.scaleMode = .aspectFill
-               // scene.size = (CGSize(width: 10, height: 50))
-              //  scene.scaleMode = SKSceneScaleMode.resizeFill
-             //   let transition = SKTransition.doorway(withDuration: 2)
-              //  self.view?.presentScene(scene, transition: transition)
-                
+
             }
             
             if letter1.contains(location) {
