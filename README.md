@@ -3,5 +3,4 @@ as many words as possible by dragging their finger along the letters on the lett
 get bonus stars by accomplishing one (or more) of the three goals given at the beginning of the game.  Bonus stars are worth a lot of points 
 but can also be used to buy vowels which might allow you to create long words.  I hope to have it up on the App store soon!
 
-
-![ScreenShot1](https://github.com/user-attachments/assets/511d493e-d139-416b-8a04-9a0ac9eaa3fa)
+![screen1](https://github.com/user-attachments/assets/2ec5e835-2390-4bab-876b-517d5f8e6631)
