@@ -37,29 +37,29 @@ class MenuScene: SKScene {
         
         
         let firstWord = SKLabelNode(fontNamed: "Chalkduster")
-        firstWord.text = "The"
+        firstWord.text = "Word"
         firstWord.fontSize = 70
         firstWord.fontColor = SKColor.black
         firstWord.position = CGPoint(x: -200, y: 800)
         
         let secondWord = SKLabelNode(fontNamed: "Chalkduster")
-        secondWord.text = "Word"
+        secondWord.text = "-er"
         secondWord.fontSize = 70
         secondWord.fontColor = SKColor.black
         secondWord.position = CGPoint(x: 800, y: 300)
         
         let thirdWord = SKLabelNode(fontNamed: "Chalkduster")
-        thirdWord.text = "Game!"
+        thirdWord.text = "-ific!"
         thirdWord.fontSize = 70
         thirdWord.fontColor = SKColor.black
         thirdWord.position = CGPoint(x: -550, y: 200)
         
-        let actionMove = SKAction.move(to: CGPoint(x: -200, y: 400),
+        let actionMove = SKAction.move(to: CGPoint(x: -170, y: 400),
                                        duration: TimeInterval(0.4))
         
-        let actionMove2 = SKAction.move(to: CGPoint(x: -25, y: 300), duration: TimeInterval(0.25))
+        let actionMove2 = SKAction.move(to: CGPoint(x: -20, y: 300), duration: TimeInterval(0.25))
         
-        let actionMove3 = SKAction.move(to: CGPoint(x: 130, y: 200), duration: TimeInterval(0.25))
+        let actionMove3 = SKAction.move(to: CGPoint(x: 120, y: 200), duration: TimeInterval(0.25))
         
         let highScoreText = SKLabelNode(fontNamed: "ArialMT")
         highScoreText.text = "High Score: "

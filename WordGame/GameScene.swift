@@ -733,12 +733,7 @@ class GameScene: SKScene {
                                 
                             })
                             
-                            
-                            
                         }
-                        
-                        
-
                     }
                 
                 }
@@ -1990,8 +1985,8 @@ class GameScene: SKScene {
                     
                     var tempString = ""
                     
-                    var temp = chosenWord.count
-                    var temp2 = ("\(temp)")
+                    let temp = chosenWord.count
+                    let temp2 = ("\(temp)")
                     
                     tempString.append(temp2)
                     tempString.append(" letter word!")
@@ -2006,8 +2001,6 @@ class GameScene: SKScene {
                     let scaleUpAction = SKAction.scale(to: 1.5, duration: 0.3)
                     let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
                     let actionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction])
-                    // let bonusActionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction, scaleDownAction])
-                    
                     
                     run(goodChoice)
                     
@@ -2027,9 +2020,6 @@ class GameScene: SKScene {
                         self.run(self.goodChoice)
                         
                         self.correctWordString.run(actionSequence, completion: {
-                            
-                            // self.checkForBonusStars(word: "apple")
-                            // self.checkForBonusStars(word: "looker")
                             
                             if (self.checkForBonusStars(word: lowerCaseWord)) {
                                 
@@ -2185,9 +2175,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            
-                            
-                            //
                         })
                         
                     })
@@ -2219,10 +2206,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            
-                            
-                            
-                            //
                         })
                         
                     })
@@ -2254,10 +2237,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            
-                            
-                            
-                            //
                         })
                         
                     })
@@ -2290,10 +2269,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            
-                            
-                            
-                            //
                         })
                         
                     })
@@ -2325,10 +2300,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            
-                            
-                            
-                            //
                         })
                         
                     })
@@ -2359,10 +2330,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            
-                            
-                            
-                            //
                         })
                         
                     })
@@ -2396,10 +2363,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            
-                            
-                            
-                            //
                         })
                         
                     })
@@ -2432,7 +2395,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2464,7 +2426,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2497,7 +2458,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                            
-                            //
                         })
                     })
                 }
@@ -2528,15 +2488,10 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
             }
-            
-            
-            
-            
             
             if letter12.contains(location) {
                 
@@ -2561,8 +2516,7 @@ class GameScene: SKScene {
                             
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
-                           
-                            //
+                        
                         })
                     })
                 }
@@ -2593,7 +2547,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                            
-                            //
                         })
                     })
                 }
@@ -2623,7 +2576,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2655,7 +2607,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2685,7 +2636,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2715,7 +2665,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2746,7 +2695,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2778,7 +2726,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                            
-                            //
                         })
                     })
                 }
@@ -2809,7 +2756,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                            
-                            //
                         })
                     })
                 }
@@ -2839,7 +2785,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2870,7 +2815,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
@@ -2931,7 +2875,6 @@ class GameScene: SKScene {
                             numStarsCollected -= 1
                             self.numBonusStarsLabel.text = "\(numStarsCollected)"
                             
-                            //
                         })
                     })
                 }
