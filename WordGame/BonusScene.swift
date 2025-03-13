@@ -55,7 +55,7 @@ class BonusScene: SKScene {
             
             self.run(wait2, completion: {
                 
-                let intro4 = SKLabelNode(fontNamed: "Chalkduster")
+                let intro4 = SKLabelNode(fontNamed: "ArialMT")
                 intro4.text = bonusLetter
                 intro4.fontSize = 30
                 intro4.fontColor = SKColor.black

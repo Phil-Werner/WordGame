@@ -63,7 +63,7 @@ class GameScene: SKScene {
  //       print("alphabet count = ", alphabet.count)
         
         let tempNum = alphabet.count - 1
-        var numLettersInAlphabet = UInt32(tempNum)
+        let numLettersInAlphabet = UInt32(tempNum)
         let pick = arc4random_uniform(numLettersInAlphabet)
         
         return alphabet[Int(pick)]
